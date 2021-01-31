@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+}
+
+/*****************Media queries*********************/
+
+.nav-wrapper {
+    height: 35vh;
+}
+
