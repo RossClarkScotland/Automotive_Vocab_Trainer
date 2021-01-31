@@ -5,9 +5,37 @@
     font-size: 10px;
 }
 
+h1 {
+    font-size:4.5rem;
+}
+
+h2 {
+    font-size:3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size:2rem;
+}
+
+h5 {
+    font-size:1.5rem;
+}
+
+/*****************Landing page*********************/
+#hero-image {
+    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(56, 55, 55, 0.2))), url("https://cdn.pixabay.com/photo/2018/05/20/10/13/racing-3415413_1280.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+   
+}
+
+
 /*****************Media queries*********************/
 
-.nav-wrapper {
-    height: 35vh;
-}
+
 
