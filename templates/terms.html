@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>This extends the base template.</h2>
     {% for term in terms %}
         {{ term.term_name }}<br>
         {{ term.topic_name }}<br>
         {{ term.definition }}<br>
         {{ term.definition_source }}
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
