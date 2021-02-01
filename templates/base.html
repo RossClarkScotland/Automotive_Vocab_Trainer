@@ -24,7 +24,7 @@
             <a href="#" class="brand-logo">English for Automotive Engineers</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('get_terms') }}">Glossary</a></li>
                 <li><a href="#">Vocabulary trainer</a></li>
                 <li><a href="{{ url_for('login') }}">Log in</a></li>
@@ -39,7 +39,7 @@
         <ul class="sidenav" id="mobile-demo">
                 <li><h4 class="center-align red-text darken-4">English for Automotive Engineers</h4></li>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('get_terms') }}">Glossary</a></li>
                 <li><a href="#">Vocabulary trainer</a></li>
                 <li><a href="{{ url_for('login') }}">Log in</a></li>
