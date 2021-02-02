@@ -100,6 +100,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_term")
+def add_term():
+    return render_template("add_term.html")
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 

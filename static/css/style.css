@@ -40,6 +40,14 @@ nav .brand-logo {
     
 }
 
+/*****************Glossary*********************/
+.definition {
+    font-size:1.5rem;
+}
+
+.term {
+    font-size:1.5rem;
+}
 
 /*****************Media queries*********************/
 
