@@ -22,6 +22,17 @@
                     <label for="definition">Definition</label>
                 </div>
             </div>
+            <!--Field to allow only admin to enter course book topic for terms-->
+            {% if session["user"] == "rossclark" %}
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <i class="fa fa-list-alt prefix red-text text-darken-4"></i>
+                        <textarea id="topic_name" name="topic_name" 
+                        class="materialize-textarea" required></textarea>
+                        <label for="topic_name">Topic</label>
+                    </div>
+                </div>
+            {% endif %}
             <!--Field to enter source of definition-->
             <div class="row">    
                 <div class="input-field col s12">
@@ -30,7 +41,7 @@
                     class="materialize-textarea" required></textarea>
                     <label for="definition_source">Source of definition</label>
                 </div>
-            </div>
+            </div>                
             <!--Form submission button-->
             <button class="btn col s12 center-align red darken-4" type="submit">Add term
                 <i class="fas fa-plus-square right"></i>
