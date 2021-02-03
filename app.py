@@ -100,9 +100,22 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_term")
+@app.route("/add_term", methods=["GET", "POST"])
 def add_term():
-    return render_template("add_term.html")
+    if request.method == "POST":
+        term = {
+            "topic_name": request.form.get("topic_name"),
+            "term_name": request.form.get("term_name"),
+            "definition": request.form.get("definition"),
+            "definition_source": request.form.get("definition_source"),
+            "created_by": session["user"]
+
+        }
+        mongo.db.terms.insert_one(term)
+        flash("You have added a term to the glossary!")
+        return redirect(url_for("get_terms"))
+
+    return render_template("add_term.html", terms = "terms")
 
 
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
