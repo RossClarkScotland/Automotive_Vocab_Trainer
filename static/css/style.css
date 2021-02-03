@@ -25,6 +25,7 @@ h5 {
     font-size:1.5rem;
 }
 
+
 /*****************Landing page*********************/
 #hero-image {
     background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(56, 55, 55, 0.2))), url("https://cdn.pixabay.com/photo/2018/05/20/10/13/racing-3415413_960_720.jpg");
@@ -40,14 +41,25 @@ nav .brand-logo {
     
 }
 
-/*****************Glossary*********************/
+/*****************Terms*********************/
+.btn-small {
+    margin: 1rem;
+}
+
+.collapsible-header {
+    margin: 0.5rem;
+    line-height: 5rem;
+}
+
 .definition {
     font-size:1.5rem;
 }
 
 .term {
     font-size:1.5rem;
+    margin: 1rem;
 }
+
 
 /*****************Media queries*********************/
 
