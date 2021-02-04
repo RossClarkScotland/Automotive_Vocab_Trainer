@@ -120,10 +120,20 @@ def add_term():
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
+    if request.method == "POST":
+        submit = {
+            "topic_name": request.form.get("topic_name"),
+            "term_name": request.form.get("term_name"),
+            "definition": request.form.get("definition"),
+            "definition_source": request.form.get("definition_source"),
+            "created_by": session["user"]
+        }
+        mongo.db.terms.update({"_id": ObjectId(term_id)}, submit)
+        flash("You have edited the term!")
+
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
-    return render_template("edit_term.html", term = "term", topics=topics)
-
+    return render_template("edit_term.html", term=term, topics=topics)
 
 
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!

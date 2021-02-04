@@ -9,7 +9,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
                     <input id="term_name" name="term_name" maxlength="60"
-                     type="text" class="validate" required>
+                     value="{{ term.term_name }}" type="text" class="validate" required>
                     <label for="term_name">Term</label>
                 </div>
             </div>
@@ -17,12 +17,14 @@
             <div class="row">    
                 <div class="input-field col s12">
                     <i class="fas fa-quote-left prefix red-text text-darken-4"></i>
-                    <textarea id="definition" name="definition" 
-                    class="materialize-textarea" required></textarea>
+                    <textarea id="definition" name="definition" maxlength="1000"
+                    class="materialize-textarea" validate required>{{ term.definition }}</textarea>
                     <label for="definition">Definition</label>
                 </div>
             </div>
             <!--Field to allow only admin to enter course book topic for terms-->
+            <!--Field for topic entry is an open textarea, rather than a drop-down
+            menu for more flexibility as the course topics are apt to change-->
             {% if session["user"] == "rossclark" %}
                 <div class="row">    
                     <div class="input-field col s12">
@@ -37,15 +39,19 @@
             <div class="row">    
                 <div class="input-field col s12">
                     <i class="fas fa-book-open prefix red-text text-darken-4"></i>
-                    <textarea id="definition_source" name="definition_source" 
-                    class="materialize-textarea" required></textarea>
+                    <textarea id="definition_source" name="definition_source" maxlength="1000" 
+                    class="materialize-textarea" validate required>{{ term.definition_source }}</textarea>
                     <label for="definition_source">Source of definition</label>
                 </div>
             </div>                
             <!--Form submission button-->
-            <button class="btn col s12 center-align red darken-4" type="submit">Edit term
+            <button class="btn col s8 center-align red darken-4" type="submit">Edit term
                 <i class="fas fa-edit right"></i>
             </button>
+            
+            <a href="{{url_for('get_terms') }}" class="btn col s4 large orange darken-2">
+                Cancel edits <i class="fas fa-times-circle right"></i>
+            </a>
         </form>
   </div>
 {% endblock %}
