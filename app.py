@@ -149,6 +149,19 @@ def get_topics():
     return render_template("topics.html", topics=topics)
 
 
+@app.route("/add_topic", methods=["GET", "POST"])
+def add_topic():
+    if request.method == "POST":
+        topic = {
+            "topic_name": request.form.get("topic_name")
+        }
+        mongo.db.categories.insert_one(topic)
+        flash("You added a new topic!")
+        return redirect(url_for("get_topics"))
+
+    return render_template("add_topic.html")
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
