@@ -136,6 +136,13 @@ def edit_term(term_id):
     return render_template("edit_term.html", term=term, topics=topics)
 
 
+@app.route("/delete_term/<term_id>")
+def delete_term(term_id):
+    mongo.db.terms.remove({"_id": ObjectId(term_id)})
+    flash("You have removed a term from the glossary.")
+    return redirect(url_for("get_terms"))
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
