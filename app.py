@@ -143,6 +143,12 @@ def delete_term(term_id):
     return redirect(url_for("get_terms"))
 
 
+@app.route("/get_topics")
+def get_topics():
+    topics = list(mongo.db.topics.find().sort("topic_name", 1))
+    return render_template("topics.html", topics=topics)
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
