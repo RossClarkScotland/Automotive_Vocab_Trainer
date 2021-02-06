@@ -163,6 +163,23 @@ def add_topic():
     return render_template("add_topic.html")
 
 
+@app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
+def edit_topic(topic_id):
+    if request.method == "POST":
+        submit = {
+            "topic_name": request.form.get("topic_name"),
+            "img_url": request.form.get("img_url")
+        }
+        mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
+        flash("You edited the topic!")
+        return redirect(url_for("get_topics"))
+        
+    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    return render_template("edit_topic.html", topic=topic)    
+
+
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 

@@ -66,6 +66,14 @@ nav .brand-logo {
     height: 20rem;
 }
 
+.topic-card {
+    margin-bottom: 8rem;
+}
+
+.topic-btn {
+    width: 14rem;
+}
+
 #add-topic_btn {
     margin: 3rem 0 2rem 0;
 }
