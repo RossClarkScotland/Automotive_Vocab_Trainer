@@ -66,6 +66,10 @@ nav .brand-logo {
     height: 20rem;
 }
 
+#add-topic_btn {
+    margin: 3rem 0 2rem 0;
+}
+
 
 /*****************Media queries*********************/
 

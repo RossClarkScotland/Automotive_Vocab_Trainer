@@ -3,11 +3,23 @@
     <h3 class="center-align">Terms by topic</h3>
     <h5 class="center-align">Click a topic to reveal the related terms.</h5>
 
+    {% if session["user"] == "rossclark" %}
+    <div class="row">
+        <div id="add-topic_btn" class="col s12 center-align">
+            <a href="{{ url_for('add_topic') }}" class="btn-large red darken-4">
+                Add topic <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
     <div class="row">
         {% for topic in topics %}
         <div class="col s12 m4 topic_img">
             <div class="card">
                 <div class="card-image">
+                    <!--Images via URL to allow new images to be uploaded 
+                    when admin adds a new category -->
                     <img src="{{ topic.img_url }}">
                 </div>
                 <div class="card-action center-align">
