@@ -27,7 +27,7 @@ def home():
 
 @app.route("/get_terms")
 def get_terms():
-    terms = list(mongo.db.terms.find())
+    terms = list(mongo.db.terms.find().sort("term_name", 1))
     return render_template("terms.html", terms=terms)
 
 
@@ -145,7 +145,7 @@ def delete_term(term_id):
 
 @app.route("/get_topics")
 def get_topics():
-    topics = list(mongo.db.topics.find().sort("topic_name", 1))
+    topics = list(mongo.db.topics.find())
     return render_template("topics.html", topics=topics)
 
 

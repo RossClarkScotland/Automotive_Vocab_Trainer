@@ -60,6 +60,12 @@ nav .brand-logo {
     margin: 1rem;
 }
 
+/*****************Topics*********************/
+
+.topic_img {
+    height: 20rem;
+}
+
 
 /*****************Media queries*********************/
 
