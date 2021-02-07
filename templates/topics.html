@@ -3,6 +3,7 @@
     <h3 class="center-align">Terms by topic</h3>
     <h5 class="center-align">Click a topic to reveal the related terms.</h5>
 
+    <!--Makes add topic button available to admin alone-->
     {% if session["user"] == "rossclark" %}
     <div class="row">
         <div id="add-topic_btn" class="col s12 center-align">
@@ -15,10 +16,10 @@
 
     <div class="row">
         {% for topic in topics %}
+        <!--Adds class to topic cards to increase margins in admin view-->
             {% if session["user"] == "rossclark" %}
                 <div class="col s12 m4 topic_img topic-card">
-            {% endif %}
-            {% if session["user"] != "rossclark" %}
+            {% else %}
                 <div class="col s12 m4 topic_img">
             {% endif %}
                     <div class="card">
@@ -27,12 +28,12 @@
                             when admin adds a new category -->
                             <img src="{{ topic.img_url }}">
                         </div>
+                        <!--Makes edit and delete topic buttons available only to admin-->
                         {% if session["user"] != "rossclark" %}
                             <div class="card-action center-align">
                                 <a href="#" class="btn red darken-4 topic-btn">{{ topic.topic_name }}</a>
                             </div>
-                        {% endif %}
-                        {% if session["user"] == "rossclark" %}
+                        {% else %}
                             <div class="card-action center-align">
                                 <a href="#" class="btn green darken-4 topic-btn">{{ topic.topic_name }}</a>
                             </div>

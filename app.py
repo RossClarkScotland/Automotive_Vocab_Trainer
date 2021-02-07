@@ -122,7 +122,8 @@ def add_term():
         flash("You have added a term to the glossary!")
         return redirect(url_for("get_terms"))
 
-    return render_template("add_term.html", terms = "terms")
+    topics = mongo.db.topics.find()
+    return render_template("add_term.html", topics=topics)
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
