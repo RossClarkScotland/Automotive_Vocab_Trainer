@@ -173,11 +173,16 @@ def edit_topic(topic_id):
         mongo.db.topics.update({"_id": ObjectId(topic_id)}, submit)
         flash("You edited the topic!")
         return redirect(url_for("get_topics"))
-        
+
     topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
-    return render_template("edit_topic.html", topic=topic)    
+    return render_template("edit_topic.html", topic=topic)
 
 
+@app.route("/delete_topic/<topic_id>")
+def delete_topic(topic_id):
+    mongo.db.topics.remove({"_id": ObjectId(topic_id)})
+    flash("You removed a topic!")
+    return redirect(url_for("get_topics"))
 
 
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!

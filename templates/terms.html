@@ -10,8 +10,8 @@
                 <!--Restricts editing and deleting rights to entry authors and admin-->
                 {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
                     <div class="col s3">
-                        <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-3 btn-small">Edit term</a>
-                        <a href="{{ url_for('delete_term', term_id=term._id) }}" class="red darken-1 btn-small">Delete term</a>
+                        <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-3 btn-small">Edit</a>
+                        <a href="{{ url_for('delete_term', term_id=term._id) }}" class="red darken-1 btn-small">Delete</a>
                     </div>
                 {% endif %}
                 <div class="col s9">
