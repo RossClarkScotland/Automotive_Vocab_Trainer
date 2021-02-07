@@ -31,6 +31,13 @@ def get_terms():
     return render_template("terms.html", terms=terms)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    terms = list(mongo.db.terms.find({"$text": {"$search": query}}))
+    return render_template("terms.html", terms=terms)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
