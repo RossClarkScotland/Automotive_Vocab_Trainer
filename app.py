@@ -145,6 +145,7 @@ def edit_term(term_id):
 
 
 @app.route("/delete_term/<term_id>")
+@app.route("/delete_term/<term_id>")
 def delete_term(term_id):
     mongo.db.terms.remove({"_id": ObjectId(term_id)})
     flash("You have removed a term from the glossary.")
