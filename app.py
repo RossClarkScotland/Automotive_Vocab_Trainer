@@ -49,17 +49,29 @@ def register():
             flash("Someone else already has this username.")
             return redirect(url_for("register"))
 
-        # Takes info from form and stores it in the database
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+        # Credit to my fellow student Helen Goatly for helping me work out,
+        # via Slack, that the two following lines of code were necessary
+        password = request.form.get("password")
+        passwordcheck = request.form.get("passwordcheck")
 
-        # new user goes into session cookie
-        session["user"] = request.form.get("username").lower()
-        flash("All systems go! You have registered successfully!")
-        return redirect(url_for("profile", username=session["user"]))
+        # Ensures the user has entered their password as intended
+        if password != passwordcheck:
+            flash("Passwords do not match! Please try again.")
+            return redirect(url_for("register"))
+
+        if password == passwordcheck:
+        # Takes info from form and stores it in the database
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.users.insert_one(register)
+
+            # new user goes into session cookie
+            session["user"] = request.form.get("username").lower()
+            flash("All systems go! You have registered successfully!")
+            return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
