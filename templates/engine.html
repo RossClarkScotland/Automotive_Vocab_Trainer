@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="center-align">The engine</h3>
+    <h5 class="center-align">Click a term to reveal its definition.</h5>
+
+    <!--Search field: short minlength as students may search acronyms/initialisms-->
+    <div class="row card-panel grey lighten-4">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix light-red-text text-darken-4"></i>
+                    <input type="text" class="validate" name="query" id="query" minlength="2" required>
+                    <label for="query">Search terms</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_terms') }}" class="amber darken-4 btn">Reset</a>
+                    <button type="submit" class="red darken-4 btn">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if terms|length > 0 %}
+    <ul class="collapsible popout">
+        {% for term in terms %}
+            {% if term.topic_name == "Electric cars" %}
+            <li>
+                <div class="collapsible-header white-text grey darken-2">
+                    <!--Restricts editing and deleting rights to entry authors and admin-->
+                    {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
+                        <div class="col s3">
+                            <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-3 btn">Edit</a>
+                            <!-- Modal Trigger -->
+                            <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
+                            <a class=" btn modal-trigger red darken-1" href="#modal{{ loop.index }}">Delete</a>
+                            <!-- Modal Structure -->
+                            <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
+                                <div class="modal-content black-text center-align">
+                                    <h2>Do you really want to delete this term?</h2>
+                                    <a href="{{ url_for('delete_term', term_id=term._id) }}" class="modal-close red darken-4 btn-large">Yes</a>
+                                    <a href="#!" class="modal-close amber darken-4 btn-large">No</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="col s9">
+                        <strong class="term">{{ term.term_name }}</strong>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                    <p class="definition">{{ term.definition }}</p><br>
+                    <strong>Term from Course Book unit: {{ term.topic_name }}</strong>
+                    <p><em>Source of definition: {{ term.definition_source }}</em></p>
+                    <p><em>by: {{ term.created_by }}</em></p>
+                </div>
+            </li>
+            {% endif  %}
+            {% endfor %}
+        </ul>
+        {% else %}
+            <h3 class="red-text darken-4 center-align">NO RESULTS FOUND</h3>
+        {% endif %}
+
+{% endblock %}

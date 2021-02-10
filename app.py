@@ -170,6 +170,11 @@ def get_topics():
     return render_template("topics.html", topics=topics)
 
 
+@app.route("/engine")
+def engine():
+    return render_template("engine.html")
+
+
 @app.route("/add_topic", methods=["GET", "POST"])
 def add_topic():
     if request.method == "POST":
