@@ -211,6 +211,13 @@ def delete_topic(topic_id):
     return redirect(url_for("get_topics"))
 
 
+@app.route("/get_topic/<topic_id>") 
+def get_topic(topic_id):
+    topic = mongo.db.topics.find_one({'_id': topic_id})
+    return render_template("get_topic.html", topic=topic)
+
+
+
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 

@@ -25,6 +25,10 @@ h5 {
     font-size:1.5rem;
 }
 
+.confirm-btn {
+    margin: 2rem;
+    width: 10rem;
+}
 
 /*****************Landing page*********************/
 #hero-image {
