@@ -213,8 +213,9 @@ def delete_topic(topic_id):
 
 @app.route("/get_topic/<topic_id>") 
 def get_topic(topic_id):
-    topic = mongo.db.topics.find_one({'_id': topic_id})
-    return render_template("get_topic.html", topic=topic)
+    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+    terms = list(mongo.db.terms.find().sort("term_name", 1))
+    return render_template("get_topic.html", topic=topic, terms=terms)
 
 
 
