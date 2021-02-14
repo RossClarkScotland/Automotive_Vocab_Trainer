@@ -20,10 +20,10 @@
                         <!--Restricts editing and deleting rights to entry authors and admin-->
                         {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
                             <div class="col s3">
-                                <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-3 btn">Edit</a>
+                                <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-3 btn term-btn">Edit</a>
                                 <!-- Modal Trigger -->
                                 <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
-                                <a class=" btn modal-trigger red darken-1" href="#modal{{ loop.index }}">Delete</a>
+                                <a class=" btn modal-trigger red darken-1 term-btn" href="#modal{{ loop.index }}">Delete</a>
                                 <!-- Modal Structure -->
                             <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
                                 <div class="modal-content black-text center-align">
