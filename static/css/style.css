@@ -53,6 +53,18 @@ nav .brand-logo {
     font-size: 1.75rem;
 }
 
+/*****************Profile*********************/
+
+.profile-card {
+    width: 30rem;
+    height: auto;
+    margin: 1rem auto 0 auto;
+}
+
+#profile-text {
+    font-size: 1rem;
+}
+
 
 /*****************Terms*********************/
 .btn-small {
