@@ -32,7 +32,9 @@ h5 {
 
 /*****************Landing page*********************/
 #hero-image {
-    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(56, 55, 55, 0.2))), url("https://cdn.pixabay.com/photo/2018/05/20/10/13/racing-3415413_960_720.jpg");
+    background-image:-o-linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("../images/f1.jpg");
+    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(75, 73, 73, 0.3))), url("../images/f1.jpg");
+    background-image:linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("../images/f1.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
