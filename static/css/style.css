@@ -32,9 +32,7 @@ h5 {
 
 /*****************Landing page*********************/
 #hero-image {
-    background-image:-o-linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("../images/f1.jpg");
-    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(75, 73, 73, 0.3))), url("../images/f1.jpg");
-    background-image:linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("../images/f1.jpg");
+    background-image: url("../images/porsche.png");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
@@ -122,24 +120,39 @@ nav .brand-logo {
 
 /*****************Media queries*********************/
 
+/***********Homepage**************/
+@media only screen and (min-width: 1024px) {
+#hero-image {
+    background-image: url("../images/f1.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    }
+}
+
 @media only screen and (min-width: 1280px) {
 
+/***********navbar**************/
     nav .brand-logo {
         font-size: 2.3rem;
-        margin: 1.8rem;
+        margin: 1.2rem;
     }
 
     nav ul a {
         font-size: 1.01rem;
-        margin: 2.15rem 0.1rem;
+        margin: 1.3rem 0.1rem;
     }
 
     nav.nav-extended .nav-wrapper {
-        min-height: 6rem;
+        min-height: 4.75rem;
     }
 
-@media only screen and (min-width: 1440px) {
+}
 
+
+
+@media only screen and (min-width: 1440px) {
+/***********navbar**************/
     nav .brand-logo {
         font-size: 2.75rem;
         margin: 1.9rem;
@@ -150,9 +163,4 @@ nav .brand-logo {
         margin: 2.2rem 0.1rem;
     }
 
-
-
 }
-
-
-
