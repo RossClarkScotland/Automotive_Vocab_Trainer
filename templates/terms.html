@@ -55,6 +55,15 @@
                 <strong>Term from Course Book unit: {{ term.topic_name }}</strong>
                 <p><em>Source of definition: {{ term.definition_source }}</em></p>
                 <p><em>by: {{ term.created_by }}</em></p>
+                <div class="row">
+                    <div class="col s12 right-align">
+                        <p id="rating-text">Rate this definition</p>
+                    </div>
+                    <div class="col s12 right-align">
+                        <a href="#"><i class="fas fa-thumbs-up"></i></a>
+                        <a href="#"><i class="fas fa-thumbs-down"></i></a>
+                    </div>
+                </div>
             </div>
         </li>
         {% endfor %}
