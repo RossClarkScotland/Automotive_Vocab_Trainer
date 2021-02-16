@@ -56,9 +56,13 @@ nav .brand-logo {
 /*****************Profile*********************/
 
 .profile-card {
-    width: 30rem;
+    width: 20rem;
     height: auto;
     margin: 1rem auto 0 auto;
+}
+
+.profile-card-title {
+    top: 5.75rem;
 }
 
 #profile-text {
@@ -128,19 +132,36 @@ nav .brand-logo {
     height: 100vh;
     background-size: 100% 100%;
     }
+
+    /*****************Profile*********************/
+
+.profile-card {
+    width: 30rem;
+    height: auto;
+    margin: 1rem auto 0 auto;
+    }
+
+.profile-card-title {
+    top: 11rem;
+}
+
 }
 
 @media only screen and (min-width: 1280px) {
 
 /***********navbar**************/
     nav .brand-logo {
-        font-size: 2.3rem;
+        font-size: 2rem;
         margin: 1.2rem;
+    }
+
+    nav ul {
+        margin-right: 1.5rem;
     }
 
     nav ul a {
         font-size: 1.01rem;
-        margin: 1.3rem 0.1rem;
+        margin: 1.4rem 0.4rem 1.1rem 0.1rem;
     }
 
     nav.nav-extended .nav-wrapper {
