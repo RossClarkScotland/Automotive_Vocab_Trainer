@@ -219,6 +219,23 @@ def get_topic(topic_id):
     return render_template("get_topic.html", topic=topic, terms=terms)
 
 
+@app.route("/delete")
+def delete():
+    return render_template("delete.html")
+
+
+@app.route("/delete_user")
+def delete_user():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    print(username)
+    mongo.db.users.delete_one({"username": username})
+    flash("You have deleted your account!")
+    session.pop("user")
+    return render_template("register.html", username=username)
+
+
+
 
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
 if __name__ == "__main__":
