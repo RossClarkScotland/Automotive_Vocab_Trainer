@@ -37,6 +37,21 @@
                     <label for="topic_name">Topic</label>
                 </div>
             </div>
+            {% else %}
+            <!--Field to allow users to enter only 'presentations' 
+                as topic for terms-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-alt prefix red-text text-darken-4"></i>
+                    <select id="topic_name" name="topic_name" class="icons validate" required>
+                        <option value="" disabled selected>Choose topic</option>
+                            <option value="Presentations" 
+                            data-icon="https://cdn.pixabay.com/photo/2014/12/08/21/25/business-561388_1280.jpg">
+                            Presentations</option>
+                    </select>
+                    <label for="topic_name">Topic</label>
+                </div>
+            </div>
             {% endif %}
             <!--Field to enter source of definition-->
             <div class="row">    
