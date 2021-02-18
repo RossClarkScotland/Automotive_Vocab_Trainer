@@ -27,15 +27,21 @@ def home():
 
 @app.route("/get_terms")
 def get_terms():
-    terms = list(mongo.db.terms.find().sort("term_name", 1))
-    return render_template("terms.html", terms=terms)
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        return render_template("terms.html", terms=terms)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
-    terms = list(mongo.db.terms.find({"$text": {"$search": query}}))
-    return render_template("terms.html", terms=terms)
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        query = request.form.get("query")
+        terms = list(mongo.db.terms.find({"$text": {"$search": query}}))
+        return render_template("terms.html", terms=terms)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -101,28 +107,36 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # gets username of current session user from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    terms = list(mongo.db.terms.find().sort("term_name", 1))
+    if 'user' not in session:
+        return render_template("login.html")
+    else:
+        # gets username of current session user from the database
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
 
-    if session["user"]:
-        return render_template("profile.html", username=username, terms=terms)
+        if session["user"]:
+            return render_template("profile.html", username=username, terms=terms)
 
-    return redirect(url_for("login"))
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
-    # delete user from session cookies
-    flash("You have logged out.")
-    session.pop("user")
-    return redirect(url_for("login"))
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        # delete user from session cookies
+        flash("You have logged out.")
+        session.pop("user")
+        return redirect(url_for("login"))
 
 
 @app.route("/add_term", methods=["GET", "POST"])
 def add_term():
-    if request.method == "POST":
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    elif request.method == "POST":
         term = {
             "topic_name": request.form.get("topic_name"),
             "term_name": request.form.get("term_name"),
@@ -141,7 +155,9 @@ def add_term():
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
-    if request.method == "POST":
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    elif request.method == "POST":
         submit = {
             "topic_name": request.form.get("topic_name"),
             "term_name": request.form.get("term_name"),
@@ -160,25 +176,28 @@ def edit_term(term_id):
 @app.route("/delete_term/<term_id>")
 @app.route("/delete_term/<term_id>")
 def delete_term(term_id):
-    mongo.db.terms.remove({"_id": ObjectId(term_id)})
-    flash("You have removed a term from the glossary.")
-    return redirect(url_for("get_terms"))
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        mongo.db.terms.remove({"_id": ObjectId(term_id)})
+        flash("You have removed a term from the glossary.")
+        return redirect(url_for("get_terms"))
 
 
 @app.route("/get_topics")
 def get_topics():
-    topics = list(mongo.db.topics.find())
-    return render_template("topics.html", topics=topics)
-
-
-@app.route("/engine")
-def engine():
-    return render_template("engine.html")
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        topics = list(mongo.db.topics.find())
+        return render_template("topics.html", topics=topics)
 
 
 @app.route("/add_topic", methods=["GET", "POST"])
 def add_topic():
-    if request.method == "POST":
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    elif request.method == "POST":
         topic = {
             "topic_name": request.form.get("topic_name"),
             "img_url": request.form.get("img_url")
@@ -192,7 +211,9 @@ def add_topic():
 
 @app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
 def edit_topic(topic_id):
-    if request.method == "POST":
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    elif request.method == "POST":
         submit = {
             "topic_name": request.form.get("topic_name"),
             "img_url": request.form.get("img_url")
@@ -207,32 +228,47 @@ def edit_topic(topic_id):
 
 @app.route("/delete_topic/<topic_id>")
 def delete_topic(topic_id):
-    mongo.db.topics.remove({"_id": ObjectId(topic_id)})
-    flash("You removed a topic!")
-    return redirect(url_for("get_topics"))
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        mongo.db.topics.remove({"_id": ObjectId(topic_id)})
+        flash("You removed a topic!")
+        return redirect(url_for("get_topics"))
 
 
 @app.route("/get_topic/<topic_id>") 
 def get_topic(topic_id):
-    topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
-    terms = list(mongo.db.terms.find().sort("term_name", 1))
-    return render_template("get_topic.html", topic=topic, terms=terms)
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        return render_template("get_topic.html", topic=topic, terms=terms)
 
 
 @app.route("/delete")
-def delete():   
-    return render_template("delete.html")
+def delete():
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+        print(username)
+        return render_template("delete.html")
 
 
 @app.route("/delete_user")
 def delete_user():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    print(username)
-    mongo.db.users.delete_one({"username": username})
-    flash("You have deleted your account!")
-    session.pop("user")
-    return render_template("register.html", username=username)
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        print(username)
+        mongo.db.users.delete_one({"username": username})
+        flash("You have deleted your account!")
+        session.pop("user")
+        return render_template("register.html", username=username)
 
 
 
