@@ -220,7 +220,7 @@ def get_topic(topic_id):
 
 
 @app.route("/delete")
-def delete():
+def delete():   
     return render_template("delete.html")
 
 
