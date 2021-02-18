@@ -254,7 +254,7 @@ def delete():
         username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
         print(username)
-        return render_template("delete.html")
+        return render_template("delete.html", username=username)
 
 
 @app.route("/delete_user")

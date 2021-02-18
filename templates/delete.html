@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     
+    {% if username == session["user"] %}
         <h3 class="center-align">Hit the big red button to delete your account.</h3>
             <!-- Image acts as modal trigger -->
             <div class="row">
@@ -25,6 +26,7 @@
                 </div>
             </div>
         </div>
+    {% endif %}
 
 
  
