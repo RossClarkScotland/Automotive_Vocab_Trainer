@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+import random
 
 
 app = Flask(__name__)
@@ -31,6 +32,16 @@ def get_terms():
         return redirect(url_for("login"))
     else:
         terms = list(mongo.db.terms.find().sort("term_name", 1))
+        return render_template("terms.html", terms=terms)
+
+
+@app.route("/shuffle_deck")
+def shuffle_deck():
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        random.shuffle(terms)
         return render_template("terms.html", terms=terms)
 
 
