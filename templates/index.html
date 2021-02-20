@@ -21,14 +21,14 @@
         <nav class="nav-extended red darken-4">
             <div class="nav-wrapper">
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-            <a href="#" class="brand-logo">English for Automotive Engineers</a>
+            <a href="#" class="brand-logo hide-on-small-only">English for Automotive Engineers</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('get_terms') }}">Glossary</a></li>
+                    <li><a href="{{ url_for('get_terms') }}">Terms</a></li>
                     <li><a href="{{ url_for('get_topics') }}">Topics</a></li>
-                    <li><a href="{{ url_for('add_term') }}">Add term</a></li>
+                    <li><a href="#">How to use this site</a></li>
                     <li><a href="{{ url_for('delete') }}">Delete account</a></li>
                     <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 {% else %}
@@ -58,6 +58,10 @@
                 {% endif %}
         </ul>
     </header>
+
+    <div id="hero-text" class="hide-on-med-and-up red darken-4">
+            <h5 class=>English for Automotive Engineers</h5> 
+    </div>
 
     <section>
         <!--Flash message display-->

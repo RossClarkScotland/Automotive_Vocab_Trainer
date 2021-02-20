@@ -24,10 +24,12 @@
 
     <div class="row">
         <div class="col s6 right-align">
-            <a href="{{ url_for('add_term') }}" id="terms-shuffle-btn" class="amber darken-4  btn-large shuffle-btn">Add a term</a>
+            <a href="{{ url_for('add_term') }}" 
+            class="amber darken-4  btn-large terms-btn">Add a term</a>
         </div>
         <div class="col s6 left-align">
-            <a href="{{ url_for('shuffle_deck') }}" id="terms-shuffle-btn" class="green accent-4 btn-large shuffle-btn">Shuffle terms</a>
+            <a href="{{ url_for('shuffle_deck') }}" 
+            class="green accent-4 btn-large terms-btn">Shuffle terms</a>
         </div>
     </div>
 
@@ -39,7 +41,8 @@
                 <!--Restricts editing and deleting rights to entry authors and admin-->
                 {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
                     <div class="col s3">
-                        <a href="{{ url_for('edit_term', term_id=term._id) }}" class="amber darken-4 btn term-btn">Edit</a>
+                        <a href="{{ url_for('edit_term', term_id=term._id) }}" 
+                        class="amber darken-4 btn term-btn">Edit</a>
                         <!-- Modal Trigger -->
                         <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
                         <a class=" btn modal-trigger red darken-1 term-btn" href="#modal{{ loop.index }}">Delete</a>

@@ -263,7 +263,7 @@ def delete():
         return redirect(url_for("login"))
     else:
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
         print(username)
         return render_template("delete.html", username=username)
 

@@ -32,22 +32,35 @@ h5 {
 
 /*****************Landing page*********************/
 #hero-image {
-    background-image: url("../images/porsche.png");
+    background-image: url("../images/highway.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
    
 }
 
+#hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #fafafa;
+    text-align: center;
+    font-family: 'Lato', 'Times', Arial;
+    border-radius: 1rem;
+}
+
 
 /*****************Navbar*********************/
 nav {
     line-height: 30px;
-}
+} 
 
-nav.nav-extended .nav-wrapper {
+/*nav.nav-extended .nav-wrapper {
     min-height: 7rem;
-}
+} */
 
 nav .brand-logo {
     font-size: 1.75rem;
@@ -79,7 +92,7 @@ nav .brand-logo {
     margin-top: 3rem;
 }
 
-.shuffle-btn {
+.terms-btn {
     margin: 2rem auto 2rem auto;
     font-size: 1rem;
     font-weight: 700;    
