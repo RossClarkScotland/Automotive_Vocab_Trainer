@@ -11,6 +11,14 @@
     </div>
     <h5 class="center-align">Click a term to reveal its definition.</h5>
 
+    <!--Shuffles terms randomly for each topic-->
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('shuffle_topic', topic_id=topic._id) }}" 
+            class="green accent-4 btn-large terms-btn">Shuffle</a>
+        </div>
+    </div>
+
     {% for term in terms %}
         {% if term.topic_name == topic.topic_name  %}
             {% if terms|length > 0 %}

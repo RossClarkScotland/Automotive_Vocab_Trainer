@@ -45,6 +45,17 @@ def shuffle_deck():
         return render_template("terms.html", terms=terms)
 
 
+@app.route("/shuffle_topic/<topic_id>")
+def shuffle_topic(topic_id):
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        random.shuffle(terms)
+        return render_template("get_topic.html", topic=topic, terms=terms)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     if 'user' not in session:
