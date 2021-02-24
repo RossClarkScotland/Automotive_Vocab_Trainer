@@ -30,14 +30,14 @@
         </div>
     <!--Shuffles all the terms in the glossary randomly-->
         <div class="col s4 center-align">
-            <a href="{{ url_for('shuffle_deck') }}" 
+            <a href="{{ url_for('shuffle_definitions_first') }}" 
             class="amber darken-4 btn-large terms-btn">Shuffle</a>
         </div>
-    <!--Shows user definitions in the glossary first, before opening to terms-->
+    <!--Shows user terms in the glossary first, before opening to definitions-->
         <div class="row">
             <div class="col s4 left-align">
-                <a href="{{ url_for('definitions_first') }}" 
-                class="red darken-4  btn-large terms-btn">Definitions first</a>
+                <a href="{{ url_for('get_terms') }}" 
+                class="red darken-4  btn-large terms-btn">Terms first</a>
             </div>
         </div>
     </div>
@@ -68,12 +68,12 @@
                         </div>
                     {% endif %}
                     <div class="col s9">
-                        <strong class="term">{{ term.term_name }}</strong>
+                        <strong class="term">{{ term.definition }}</strong>
                         <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
                 <div class="collapsible-body">
-                    <p class="definition">{{ term.definition }}</p><br>
+                    <p class="definition">{{ term.term_name }}</p><br>
                     <strong>Topic: {{ term.topic_name }}</strong>
                     <p><em>Source of definition: {{ term.definition_source }}</em></p>
                     <p><em>by: {{ term.created_by }}</em></p>
