@@ -44,6 +44,16 @@ def definitions_first():
         return render_template("definitions_first.html", terms=terms)
 
 
+@app.route("/topics_definitions_first/<topic_id>")
+def topics_definitions_first(topic_id):
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+        return render_template("topics_definitions_first.html", terms=terms, topic=topic)
+
+
 @app.route("/shuffle_deck")
 def shuffle_deck():
     if 'user' not in session:
@@ -62,6 +72,17 @@ def shuffle_definitions_first():
         terms = list(mongo.db.terms.find().sort("term_name", 1))
         random.shuffle(terms)
     return render_template("definitions_first.html", terms=terms)
+
+
+@app.route("/shuffle_topics_definitions_first/<topic_id>")
+def shuffle_topics_definitions_first(topic_id):
+    if 'user' not in session:
+        return redirect(url_for("login"))
+    else:
+        topic = mongo.db.topics.find_one({"_id": ObjectId(topic_id)})
+        terms = list(mongo.db.terms.find().sort("term_name", 1))
+        random.shuffle(terms)
+    return render_template("topics_definitions_first.html", terms=terms, topic=topic)
 
 
 @app.route("/search", methods=["GET", "POST"])
