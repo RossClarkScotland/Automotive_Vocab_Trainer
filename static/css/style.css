@@ -119,19 +119,6 @@ nav .brand-logo {
 .term-btn {
     width: 5.25rem;
 }
-
-.fa-thumbs-up, .fa-thumbs-down {
-    font-size:1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    color: grey;
-}
-
-#rating-text {
-    margin-bottom: 1.1rem;
-    margin-right: 3rem;
-    color: grey;
-}
 /*****************Topics*********************/
 
 .topic_img {
