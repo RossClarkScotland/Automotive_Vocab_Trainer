@@ -21,12 +21,13 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/home")
+# Opens the home page
 def home():
     return render_template("index.html")
 
 
-
 @app.route("/get_terms")
+# Opens terms template, lists all course terms alphabetically
 def get_terms():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -36,6 +37,7 @@ def get_terms():
 
 
 @app.route("/definitions_first")
+# Shows terms page terms by definition first
 def definitions_first():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -45,6 +47,7 @@ def definitions_first():
 
 
 @app.route("/topics_definitions_first/<topic_id>")
+# Shows terms in topic pages by definition first
 def topics_definitions_first(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -55,6 +58,7 @@ def topics_definitions_first(topic_id):
 
 
 @app.route("/shuffle_deck")
+# Shuffles the order of terms on terms page
 def shuffle_deck():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -65,6 +69,7 @@ def shuffle_deck():
 
 
 @app.route("/shuffle_definitions_first")
+# Shuffles terms page items when definitions display first
 def shuffle_definitions_first():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -75,6 +80,7 @@ def shuffle_definitions_first():
 
 
 @app.route("/shuffle_topics_definitions_first/<topic_id>")
+# Shuffles topics pages' items when definitions display first
 def shuffle_topics_definitions_first(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -86,6 +92,7 @@ def shuffle_topics_definitions_first(topic_id):
 
 
 @app.route("/search", methods=["GET", "POST"])
+# Searches terms within terms page
 def search():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -96,6 +103,7 @@ def search():
 
 
 @app.route("/register", methods=["GET", "POST"])
+# Enables user registration
 def register():
     if request.method == "POST":
         # Checks whether someone else has already taken this username
@@ -133,6 +141,7 @@ def register():
 
 
 @app.route("/login", methods=["GET", "POST"])
+# Enables users to log in
 def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -157,6 +166,7 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+# Renders user profile page
 def profile(username):
     if 'user' not in session:
         return render_template("login.html")
@@ -173,6 +183,7 @@ def profile(username):
 
 
 @app.route("/logout")
+# Logs user out
 def logout():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -184,6 +195,7 @@ def logout():
 
 
 @app.route("/add_term", methods=["GET", "POST"])
+# Allows user to add to the terms list
 def add_term():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -205,6 +217,7 @@ def add_term():
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
+# Allows users to edit items in the terms list
 def edit_term(term_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -225,7 +238,7 @@ def edit_term(term_id):
 
 
 @app.route("/delete_term/<term_id>")
-@app.route("/delete_term/<term_id>")
+# Allows user to delete from the terms list
 def delete_term(term_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -236,6 +249,7 @@ def delete_term(term_id):
 
 
 @app.route("/get_topics")
+# renders topics page
 def get_topics():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -245,6 +259,7 @@ def get_topics():
 
 
 @app.route("/add_topic", methods=["GET", "POST"])
+# Enables user to add a new topic
 def add_topic():
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -261,6 +276,7 @@ def add_topic():
 
 
 @app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
+# Enables user to edit a topic
 def edit_topic(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -278,6 +294,7 @@ def edit_topic(topic_id):
 
 
 @app.route("/delete_topic/<topic_id>")
+# Enables user to delete a topic
 def delete_topic(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -287,7 +304,8 @@ def delete_topic(topic_id):
         return redirect(url_for("get_topics"))
 
 
-@app.route("/get_topic/<topic_id>") 
+@app.route("/get_topic/<topic_id>")
+# Renders get_topic page
 def get_topic(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -298,6 +316,7 @@ def get_topic(topic_id):
 
 
 @app.route("/shuffle_topic/<topic_id>")
+# Shuffles terms within individual topic pages
 def shuffle_topic(topic_id):
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -309,17 +328,18 @@ def shuffle_topic(topic_id):
 
 
 @app.route("/delete")
+# Renders delete account page
 def delete():
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        print(username)
         return render_template("delete.html", username=username)
 
 
 @app.route("/delete_user")
+# Deletes user from the database
 def delete_user():
     if 'user' not in session:
         return redirect(url_for("login"))
