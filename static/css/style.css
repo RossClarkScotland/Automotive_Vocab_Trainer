@@ -92,14 +92,19 @@ nav .brand-logo {
 }
 
 .search {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .terms-btn {
-    margin: 2rem auto 2rem auto;
+    margin: 0.5rem auto 0.5rem auto;
     width: 14rem;
     font-size: 1rem;
     font-weight: 700;    
+}
+
+.card-panel {
+    margin: .25rem 0 .25 0;
+    padding: .2rem;
 }
 
 .collapsible-header {

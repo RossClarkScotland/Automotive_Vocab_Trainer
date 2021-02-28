@@ -26,19 +26,17 @@
     <div class="row">
         <div class="col s4 right-align">
             <a href="{{ url_for('add_term') }}" 
-            class="green accent-4  btn-large terms-btn">Add term</a>
+            class="red darken-4  btn-large terms-btn">Add term</a>
         </div>
     <!--Shuffles all the terms in the glossary randomly-->
         <div class="col s4 center-align">
             <a href="{{ url_for('shuffle_deck') }}" 
-            class="amber darken-4 btn-large terms-btn">Shuffle</a>
+            class="red darken-4 btn-large terms-btn">Shuffle</a>
         </div>
     <!--Shows user definitions in the glossary first, before opening to terms-->
-        <div class="row">
-            <div class="col s4 left-align">
-                <a href="{{ url_for('definitions_first') }}" 
-                class="red darken-4  btn-large terms-btn">By definition</a>
-            </div>
+        <div class="col s4 left-align">
+            <a href="{{ url_for('definitions_first') }}" 
+            class="red darken-4  btn-large terms-btn">By definition</a>
         </div>
     </div>
 
