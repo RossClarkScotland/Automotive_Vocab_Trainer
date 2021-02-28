@@ -4,17 +4,17 @@
     <h5 class="center-align">Click a term to reveal its definition.</h5>
 
     <!--Search field: short minlength as students may search acronyms/initialisms-->
-    <div class="row card-panel grey lighten-4 search">
+    <div class="row card-panel search-panel grey lighten-4 search">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
                     <i class="fas fa-search prefix light-red-text text-darken-4"></i>
                     <input type="text" class="validate" name="query" id="query" minlength="2" required>
-                    <label for="query">Search terms</label>
+                    <label for="query">Search</label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('get_terms') }}" class="red darken-4 btn">Reset</a>
-                    <button type="submit" class="grey darken-2 btn">
+                    <a href="{{ url_for('get_terms') }}" class="red darken-4 btn search-btn">Reset</a>
+                    <button type="submit" class="grey darken-2 btn search-btn">
                         <i class="fas fa-search left"></i> Search
                     </button>
                 </div>

@@ -95,6 +95,11 @@ nav .brand-logo {
     margin-top: 2rem;
 }
 
+.search-btn {
+    width: 10rem;
+    margin: 0.5rem;
+}
+
 .terms-btn {
     margin: 0.5rem auto 0.5rem auto;
     width: 14rem;
@@ -102,14 +107,14 @@ nav .brand-logo {
     font-weight: 700;    
 }
 
-.card-panel {
-    margin: .25rem 0 .25 0;
+.search-panel {
+    margin: .25rem 0 1rem 0;
     padding: .2rem;
 }
 
 .collapsible-header {
     margin: 0.5rem;
-    line-height: 5rem;
+    line-height: 2.5rem;
 }
 
 .definition {
