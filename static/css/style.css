@@ -168,6 +168,19 @@ nav .brand-logo {
 
 /*****************Media queries*********************/
 
+/*****************Base.html******************/
+@media only screen and (min-width: 280px) {
+    .page-name {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .page-name {
+        visibility: visible;
+    }
+}
+
 /***********Homepage**************/
 @media only screen and (min-width: 1024px) {
 #hero-image {
@@ -217,7 +230,7 @@ nav .brand-logo {
 /**************Terms page**************/
 @media only screen and (min-width: 280px) {
 .search-btn {
-    width: 5rem;
+    width: 6rem;
     margin: 0.5rem;
     } 
 
