@@ -246,12 +246,12 @@ nav .brand-logo {
 .terms-btn {
     margin: 0.5rem auto 0.5rem auto;
     width: 5rem;
-    font-size: 0.5rem;
+    font-size: 0.55rem;
     padding: 1.5rem;
     line-height: 0.9rem;   
     }
 
-.by-def-btn {
+.multi-line-btn {
     padding: 1rem;  
     } 
 
@@ -261,10 +261,11 @@ nav .brand-logo {
 .terms-btn {
     margin: 0.5rem auto 0.5rem auto;
     width: 6rem;
-    padding: 1.5rem;  
+    padding: 1.5rem; 
+    font-size: 0.7rem; 
     } 
 
-.by-def-btn {
+.multi-line-btn {
     padding: 1rem;  
     } 
 }
@@ -282,10 +283,23 @@ nav .brand-logo {
     font-weight: 700;    
     }
     
-.by-def-btn {
+.multi-line-btn {
     padding: 1.5rem;  
     } 
 
+}
+
+/*****************get_topic.html*********************/
+@media only screen and (min-width: 280px) {
+    .get-topic-img {
+        width: 15rem;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .get-topic-img {
+        width: 20rem;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
