@@ -85,6 +85,10 @@ nav .brand-logo {
     font-size: 1rem;
 }
 
+.delete-acct-btn {
+    margin: 2.5rem;
+}
+
 
 /*****************Terms*********************/
 .btn-small {

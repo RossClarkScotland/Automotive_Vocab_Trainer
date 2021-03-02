@@ -27,7 +27,6 @@
                     <li><a href="{{ url_for('get_terms') }}">Terms</a></li>
                     <li><a href="{{ url_for('get_topics') }}">Topics</a></li>
                     <li><a href="#">How to use this site</a></li>
-                    <li><a href="{{ url_for('delete') }}">Delete account</a></li>
                     <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Log in</a></li>
@@ -46,7 +45,6 @@
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('get_terms') }}">Terms</a></li>
                     <li><a href="{{ url_for('get_topics') }}">Topics</a></li>
-                    <li><a href="{{ url_for('delete') }}">Delete account</a></li>
                     <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Log in</a></li>
