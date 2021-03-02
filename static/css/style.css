@@ -132,6 +132,11 @@ nav .brand-logo {
 
 .term-btn {
     width: 5.25rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.term-btn-defs {
+    margin: 1rem 1rem 1rem auto;
 }
 /*****************Topics*********************/
 

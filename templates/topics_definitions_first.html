@@ -33,10 +33,10 @@
                         {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
                             <div class="col s3">
                                 <a href="{{ url_for('edit_term', term_id=term._id) }}" 
-                                class="amber darken-3 btn term-btn">Edit</a>
+                                class="amber darken-3 btn term-btn term-btn-defs">Edit</a>
                                 <!-- Modal Trigger -->
                                 <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
-                                <a class=" btn modal-trigger red darken-1 term-btn" 
+                                <a class=" btn modal-trigger red darken-1 term-btn term-btn-defs" 
                                 href="#modal{{ loop.index }}">Delete</a>
                                 <!-- Modal Structure -->
                             <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
