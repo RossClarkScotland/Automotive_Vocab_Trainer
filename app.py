@@ -209,7 +209,7 @@ def add_term():
 
         }
         mongo.db.terms.insert_one(term)
-        flash("You have added a term to the glossary!")
+        flash("You have added a term!")
         return redirect(url_for("get_terms"))
 
     topics = mongo.db.topics.find()
@@ -231,6 +231,7 @@ def edit_term(term_id):
         }
         mongo.db.terms.update({"_id": ObjectId(term_id)}, submit)
         flash("You have edited the term!")
+        return redirect(url_for("get_terms"))
 
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
