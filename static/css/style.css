@@ -89,6 +89,14 @@ nav .brand-logo {
     margin: 2.5rem;
 }
 
+/*****************How to use this site*********************/
+.embed-responsive-item {
+  width: 80%;
+  height: auto;
+  margin: 1.5rem auto auto auto;
+  display: block;
+}
+
 
 /*****************Terms*********************/
 .btn-small {
@@ -197,6 +205,14 @@ nav .brand-logo {
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
+    }
+
+    /*************How to use page****************/
+    @media only screen and (min-width: 800px) {
+        .embed-responsive-item {
+            width: 43rem;
+            height: 23rem;
+        }
     }
 
     /*****************Profile*********************/

@@ -354,6 +354,11 @@ def delete_user():
         return render_template("register.html", username=username)
 
 
+@app.route("/how_to_use")
+# Opens the How to use this site page
+def how_to_use():
+    return render_template("how_to_use.html")
+
 
 
 # SET 'DEBUG' TO 'FALSE' BEFORE DEPLOYMENT!
