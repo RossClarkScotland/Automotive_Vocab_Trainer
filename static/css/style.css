@@ -30,6 +30,15 @@ h5 {
     width: 10rem;
 }
 
+/*****************Navbar*********************/
+nav {
+    line-height: 30px;
+} 
+
+nav .brand-logo {
+    font-size: 1.75rem;
+}
+
 /*****************Landing page*********************/
 #hero-image {
     background-image: url("../images/highway.jpg");
@@ -56,17 +65,9 @@ h5 {
 }
 
 
-/*****************Navbar*********************/
-nav {
-    line-height: 30px;
-} 
-
-/*nav.nav-extended .nav-wrapper {
-    min-height: 7rem;
-} */
-
-nav .brand-logo {
-    font-size: 1.75rem;
+/**************Register and Login pages**************/
+.enter-btn {
+    width: 100%;
 }
 
 /*****************Profile*********************/
@@ -240,6 +241,30 @@ nav .brand-logo {
     }
 }
 
+@media only screen and (min-width: 568px) {
+    #hero-text {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    #hero-text h5 {
+        font-size: 1rem;
+        line-height: 115%;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    #hero-text {
+        width: 9rem;
+        height: 10rem;
+    }
+
+    #hero-text h5 {
+        font-size: 1.4rem;
+        line-height: 145%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     #hero-text {
         width: 18rem;
@@ -252,6 +277,31 @@ nav .brand-logo {
         line-height: 155%;
     }
 }
+
+@media only screen and (min-width: 812px) {
+    #hero-text {
+        width: 9rem;
+        height: 9rem;
+        border: 0.15rem solid white;
+    }
+
+    #hero-text h5 {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #hero-text {
+        width: 15.5rem;
+        height: 15.5rem;
+        border: 0.25rem solid white;
+    }
+
+    #hero-text h5 {
+        font-size: 2.5rem;
+    }
+}
+
 
 @media only screen and (min-width: 1025px) {
     #hero-text {
@@ -266,6 +316,7 @@ nav .brand-logo {
     height: 100vh;
     background-size: 100% 100%;
     }
+}
 
 /*************How to use page****************/
 @media only screen and (min-width: 800px) {
@@ -309,11 +360,6 @@ nav .brand-logo {
         min-height: 4.75rem;
     }
 
-}
-
-/**************Register and Login pages**************/
-.enter-btn {
-    width: 100%;
 }
 
 /**************Terms page**************/
@@ -479,4 +525,3 @@ nav .brand-logo {
         margin-bottom: 10rem;
     }
 }
-
