@@ -191,16 +191,75 @@ nav .brand-logo {
     .page-name {
         visibility: hidden;
     }
+    nav .brand-logo {
+        visibility: hidden;
+    }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
     .page-name {
+        visibility: visible;
+    }
+    nav .brand-logo {
         visibility: visible;
     }
 }
 
+
+@media only screen and (min-width: 1440px) {
+    .nav-extended {
+        min-height: 6rem;
+    }
+}
+
+
 /***********Homepage**************/
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 320px) {
+    #hero-text {
+        width: 9rem;
+        height: 11rem;
+        border: 0.15rem solid white;
+    }
+
+    #hero-text h5 {
+        font-size: 1.3rem;
+        line-height: 185%;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    #hero-text {
+        width: 11rem;
+        height: 12rem;
+        border: 0.175rem solid white;
+    }
+
+    #hero-text h5 {
+        font-size: 1.6rem;
+        line-height: 175%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #hero-text {
+        width: 18rem;
+        height: 18rem;
+        border: 0.25rem solid white;
+    }
+
+    #hero-text h5 {
+        font-size: 3rem;
+        line-height: 155%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #hero-text {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
 #hero-image {
     background-image: url("../images/f1.jpg");
     width: 100vw;
@@ -208,15 +267,15 @@ nav .brand-logo {
     background-size: 100% 100%;
     }
 
-    /*************How to use page****************/
-    @media only screen and (min-width: 800px) {
-         .embed-responsive-item {
-            width: 43rem;
-            height: 33rem;
-        }
+/*************How to use page****************/
+@media only screen and (min-width: 800px) {
+        .embed-responsive-item {
+        width: 43rem;
+        height: 33rem;
     }
+}
 
-    /*****************Profile*********************/
+/*****************Profile*********************/
 @media only screen and (min-width: 300px) {
     .profile-card {
         width: 30rem;
@@ -227,8 +286,6 @@ nav .brand-logo {
     .profile-card-title {
         top: 11rem;
     }
-}
-
 }
 
 @media only screen and (min-width: 1280px) {
