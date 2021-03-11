@@ -339,9 +339,19 @@ nav .brand-logo {
     }
 }
 
-@media only screen and (min-width: 1280px) {
+/***********navbar**************/
+@media only screen and (min-width: 568px) {
+    .side-nav-title {
+        font-size: 1.5rem;
+    }
+
+@media only screen and (min-width: 800px) {
+    .side-nav-title {
+        font-size: 2rem;
+    }
 
 /***********navbar**************/
+@media only screen and (min-width: 1280px) {
     nav .brand-logo {
         font-size: 2rem;
         margin: 1.2rem;
