@@ -342,12 +342,22 @@ nav .brand-logo {
 /***********navbar**************/
 @media only screen and (min-width: 568px) {
     .side-nav-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+    .sidenav li a {
+        height: 2.7rem;
+        font-size: 1rem;
+        line-height: 3rem;
     }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
     .side-nav-title {
         font-size: 2rem;
+    }
+
+    .sidenav li a {
+        font-size: 1.5rem;
+        height: 4rem;
     }
 
 /***********navbar**************/

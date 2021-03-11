@@ -46,6 +46,7 @@
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('get_terms') }}">Terms</a></li>
                     <li><a href="{{ url_for('get_topics') }}">Topics</a></li>
+                    <li><a href="{{ url_for('how_to_use') }}">How to use this site</a></li>
                     <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Log in</a></li>
