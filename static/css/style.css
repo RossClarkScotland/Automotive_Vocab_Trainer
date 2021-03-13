@@ -77,12 +77,14 @@ nav .brand-logo {
 }
 
 /*****************How to use this site*********************/
+
 .embed-responsive-item {
-  width: 80%;
-  height: auto;
-  margin: 5rem auto auto auto;
+  width: 90%;
+  height: 9.8rem;
+  margin: 4rem auto auto auto;
   display: block;
 }
+
 
 
 
@@ -305,10 +307,28 @@ nav .brand-logo {
 }
 
 /*************How to use page****************/
-@media only screen and (min-width: 800px) {
-        .embed-responsive-item {
-        width: 43rem;
-        height: 33rem;
+
+@media only screen and (min-width: 411px) {
+.embed-responsive-item {
+    height: 12rem;;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+.embed-responsive-item {
+    height: 16.5rem;;
+    }
+
+@media only screen and (min-width: 768px) {
+.embed-responsive-item {
+    height: 22rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+.embed-responsive-item {
+    width: 95%;
+    height: 25rem;;
     }
 }
 
