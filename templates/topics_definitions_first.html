@@ -41,7 +41,7 @@
                                 <!-- Modal Structure -->
                             <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
                                 <div class="modal-content black-text center-align">
-                                    <h2>Do you really want to delete this term?</h2>
+                                    <h2 class="delete-msg">Do you really want to delete this term?</h2>
                                     <a href="{{ url_for('delete_term', term_id=term._id) }}" 
                                     class="modal-close red darken-4 btn-large confirm-btn">Yes</a>
                                     <a href="#!" class="modal-close amber darken-4 btn-large confirm-btn">No</a>

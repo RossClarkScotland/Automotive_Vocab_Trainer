@@ -76,6 +76,14 @@ nav .brand-logo {
     margin: 2.5rem;
 }
 
+.delete-msg {
+    font-size: 1.5rem;
+}
+
+.confirm-btn {
+    margin: .5rem;
+}
+
 /*****************How to use this site*********************/
 
 .embed-responsive-item {
@@ -556,5 +564,16 @@ nav .brand-logo {
 @media only screen and (min-width: 1336px) {
     .admin-topics-view .col.m4 {
         margin-bottom: 10rem;
+    }
+}
+
+/***********Confirm term, topic and account btns**************/
+@media only screen and (min-width: 800px) {
+    .delete-msg {
+        font-size: 2.5rem;
+    }
+
+    .confirm-btn {
+        margin: .5rem 2rem 2rem 2rem;
     }
 }
