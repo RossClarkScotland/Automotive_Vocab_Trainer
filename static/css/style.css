@@ -172,6 +172,13 @@ nav .brand-logo {
     margin: 1rem auto 0 auto;
 }
 
+@media only screen and (min-width: 300px) {
+    .delete-card {
+        width: 20rem;
+        height: auto;
+        margin: 1rem auto 0 auto;
+        }
+
 
 /*****************Media queries*********************/
 
@@ -316,8 +323,9 @@ nav .brand-logo {
 
 @media only screen and (min-width: 540px) {
 .embed-responsive-item {
-    height: 16.5rem;;
+    height: 16.5rem;
     }
+}
 
 @media only screen and (min-width: 768px) {
 .embed-responsive-item {
@@ -332,18 +340,8 @@ nav .brand-logo {
     }
 }
 
-/*****************Profile*********************/
-@media only screen and (min-width: 300px) {
-    .profile-card {
-        width: 30rem;
-        height: auto;
-        margin: 1rem auto 0 auto;
-        }
 
-    .profile-card-title {
-        top: 11rem;
-    }
-}
+
 
 /***********navbar**************/
 @media only screen and (min-width: 568px) {
