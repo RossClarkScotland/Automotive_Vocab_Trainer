@@ -60,7 +60,7 @@
                         <div class="card-image">
                             <!--Images via URL to allow new images to be uploaded 
                             when admin adds a new category -->
-                            <img src="{{ topic.img_url }}">
+                            <img src="{{ topic.img_url }}" alt="topic image">
                         </div>
                         <div class="card-action center-align">
                             <a href="{{url_for('get_topic', topic_id=topic._id)}}" 

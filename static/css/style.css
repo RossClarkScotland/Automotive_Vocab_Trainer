@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -89,7 +96,7 @@ nav .brand-logo {
 .embed-responsive-item {
   width: 90%;
   height: 9.8rem;
-  margin: 4rem auto auto auto;
+  margin: 2rem auto auto auto;
   display: block;
 }
 
@@ -186,6 +193,7 @@ nav .brand-logo {
         height: auto;
         margin: 1rem auto 0 auto;
         }
+    }
 
 
 /*****************Media queries*********************/
