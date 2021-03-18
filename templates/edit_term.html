@@ -1,56 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="center-align">Edit a term</h3>
+    <main>
+        <header>
+            <h3 class="center-align">Edit a term</h3>
+        </header>
 
-    <div class="row card-panel grey lighten-4">
-        <form class="col s12" method="POST" action="{{ url_for('edit_term', term_id=term._id) }}">
-            <!--Field to enter term-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
-                    <input id="term_name" name="term_name" maxlength="60"
-                     value="{{ term.term_name }}" type="text" class="validate" required>
-                    <label for="term_name">Term</label>
-                </div>
-            </div>
-            <!--Field to enter definition-->
-            <div class="row">    
-                <div class="input-field col s12">
-                    <i class="fas fa-quote-left prefix red-text text-darken-4"></i>
-                    <textarea id="definition" name="definition" maxlength="1000"
-                    class="materialize-textarea" validate required>{{ term.definition }}</textarea>
-                    <label for="definition">Definition</label>
-                </div>
-            </div>
-            <!--Field to allow only admin to enter course book topic for terms-->
-            {% if session["user"] == "rossclark" %}
-                <div class="row">    
+        <section class="row card-panel grey lighten-4">
+            <form class="col s12" method="POST" action="{{ url_for('edit_term', term_id=term._id) }}">
+                <!--Field to enter term-->
+                <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa fa-list-alt prefix red-text text-darken-4"></i>
-                        <textarea id="topic_name" name="topic_name" 
-                        class="materialize-textarea" required>{{ term.topic_name }}</textarea>
-                        <label for="topic_name">Topic</label>
+                        <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
+                        <input id="term_name" name="term_name" maxlength="60"
+                        value="{{ term.term_name }}" type="text" class="validate" required>
+                        <label for="term_name">Term</label>
                     </div>
                 </div>
-            {% endif %}
-            <!--Field to enter source of definition-->
-            <div class="row">    
-                <div class="input-field col s12">
-                    <i class="fas fa-book-open prefix red-text text-darken-4"></i>
-                    <textarea id="definition_source" name="definition_source" maxlength="1000" 
-                    class="materialize-textarea" validate required>{{ term.definition_source }}</textarea>
-                    <label for="definition_source">Source of definition</label>
+                <!--Field to enter definition-->
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <i class="fas fa-quote-left prefix red-text text-darken-4"></i>
+                        <textarea id="definition" name="definition" maxlength="1000"
+                        class="materialize-textarea" validate required>{{ term.definition }}</textarea>
+                        <label for="definition">Definition</label>
+                    </div>
                 </div>
-            </div>                
-            <!--Form submission button-->
-            <button class="btn col s6 red darken-4" type="submit">Edit
-                <i class="fas fa-edit right"></i>
-            </button>
-            
-            <!--Cancel edits button-->
-            <a href="{{url_for('get_terms') }}" class="btn col s6 large amber darken-3">
-                Cancel <i class="fas fa-times-circle right"></i>
-            </a>
-        </form>
-  </div>
+                <!--Field to allow only admin to enter course book topic for terms-->
+                {% if session["user"] == "rossclark" %}
+                    <div class="row">    
+                        <div class="input-field col s12">
+                            <i class="fa fa-list-alt prefix red-text text-darken-4"></i>
+                            <textarea id="topic_name" name="topic_name" 
+                            class="materialize-textarea" required>{{ term.topic_name }}</textarea>
+                            <label for="topic_name">Topic</label>
+                        </div>
+                    </div>
+                {% endif %}
+                <!--Field to enter source of definition-->
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <i class="fas fa-book-open prefix red-text text-darken-4"></i>
+                        <textarea id="definition_source" name="definition_source" maxlength="1000" 
+                        class="materialize-textarea" validate required>{{ term.definition_source }}</textarea>
+                        <label for="definition_source">Source of definition</label>
+                    </div>
+                </div>                
+                <!--Form submission button-->
+                <button class="btn col s6 red darken-4" type="submit">Edit
+                    <i class="fas fa-edit right"></i>
+                </button>
+                
+                <!--Cancel edits button-->
+                <a href="{{url_for('get_terms') }}" class="btn col s6 large amber darken-3">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+            </form>
+        </section>
+    </main>
 {% endblock %}

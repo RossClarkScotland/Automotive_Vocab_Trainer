@@ -1,72 +1,76 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="center-align">Add a term</h3>
+    <main>
+        <header>
+            <h3 class="center-align">Add a term</h3>
+        </header>
 
-    <div class="row card-panel grey lighten-4">
-        <form class="col s12" method="POST" action="{{ url_for('add_term') }}">
-            <!--Field to enter term-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
-                    <input id="term_name" name="term_name" maxlength="60"
-                     type="text" class="validate" required>
-                    <label for="term_name">Term</label>
+        <section class="row card-panel grey lighten-4">
+            <form class="col s12" method="POST" action="{{ url_for('add_term') }}">
+                <!--Field to enter term-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix red-text text-darken-4"></i>
+                        <input id="term_name" name="term_name" maxlength="60"
+                        type="text" class="validate" required>
+                        <label for="term_name">Term</label>
+                    </div>
                 </div>
-            </div>
-            <!--Field to enter definition-->
-            <div class="row">    
-                <div class="input-field col s12">
-                    <i class="fas fa-quote-left prefix red-text text-darken-4"></i>
-                    <textarea id="definition" name="definition" 
-                    class="materialize-textarea" required></textarea>
-                    <label for="definition">Definition</label>
+                <!--Field to enter definition-->
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <i class="fas fa-quote-left prefix red-text text-darken-4"></i>
+                        <textarea id="definition" name="definition" 
+                        class="materialize-textarea" required></textarea>
+                        <label for="definition">Definition</label>
+                    </div>
                 </div>
-            </div>
-            <!--Field to allow only admin to enter course topic for terms-->
-            {% if session["user"] == "rossclark" %}
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-list-alt prefix red-text text-darken-4"></i>
-                    <select id="topic_name" name="topic_name" class="icons validate" required>
-                        <option value="" disabled selected>Choose topic</option>
-                        {% for topic in topics %}
-                            <option value="{{ topic.topic_name }}" 
-                            data-icon="{{ topic.img_url }}" 
-                            alt="topic image">{{ topic.topic_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="topic_name">Topic</label>
+                <!--Field to allow only admin to enter course topic for terms-->
+                {% if session["user"] == "rossclark" %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-alt prefix red-text text-darken-4"></i>
+                        <select id="topic_name" name="topic_name" class="icons validate" required>
+                            <option value="" disabled selected>Choose topic</option>
+                            {% for topic in topics %}
+                                <option value="{{ topic.topic_name }}" 
+                                data-icon="{{ topic.img_url }}" 
+                                alt="topic image">{{ topic.topic_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="topic_name">Topic</label>
+                    </div>
                 </div>
-            </div>
-            {% else %}
-            <!--Field to allow users to enter only 'presentations' 
-                as topic for terms-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-list-alt prefix red-text text-darken-4"></i>
-                    <select id="topic_name" name="topic_name" class="icons validate" required>
-                        <option value="" disabled selected>Choose topic</option>
-                            <option value="Presentations" 
-                            data-icon="https://cdn.pixabay.com/photo/2014/12/08/21/25/business-561388_1280.jpg"
-                            alt="presentations image">Presentations</option>
-                    </select>
-                    <label for="topic_name">Topic</label>
+                {% else %}
+                <!--Field to allow users to enter only 'presentations' 
+                    as topic for terms-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-alt prefix red-text text-darken-4"></i>
+                        <select id="topic_name" name="topic_name" class="icons validate" required>
+                            <option value="" disabled selected>Choose topic</option>
+                                <option value="Presentations" 
+                                data-icon="https://cdn.pixabay.com/photo/2014/12/08/21/25/business-561388_1280.jpg"
+                                alt="presentations image">Presentations</option>
+                        </select>
+                        <label for="topic_name">Topic</label>
+                    </div>
                 </div>
-            </div>
-            {% endif %}
-            <!--Field to enter source of definition-->
-            <div class="row">    
-                <div class="input-field col s12">
-                    <i class="fas fa-book-open prefix red-text text-darken-4"></i>
-                    <textarea id="definition_source" name="definition_source" 
-                    class="materialize-textarea" required></textarea>
-                    <label for="definition_source">Source of definition</label>
-                </div>
-            </div>                
-            <!--Form submission button-->
-            <button class="btn col s12 center-align red darken-4" type="submit">Add term
-                <i class="fas fa-plus-square right"></i>
-            </button>
-        </form>
-  </div>
+                {% endif %}
+                <!--Field to enter source of definition-->
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <i class="fas fa-book-open prefix red-text text-darken-4"></i>
+                        <textarea id="definition_source" name="definition_source" 
+                        class="materialize-textarea" required></textarea>
+                        <label for="definition_source">Source of definition</label>
+                    </div>
+                </div>                
+                <!--Form submission button-->
+                <button class="btn col s12 center-align red darken-4" type="submit">Add term
+                    <i class="fas fa-plus-square right"></i>
+                </button>
+            </form>
+        </section>
+    </main>
 {% endblock %}

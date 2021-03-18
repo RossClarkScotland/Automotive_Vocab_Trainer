@@ -1,31 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="center-align">Edit a topic</h3>
+    <main>
+        <header>
+            <h3 class="center-align">Edit a topic</h3>
+        </header>
 
-    <div class="row card-panel grey lighten-4">
-        <form class="col s12" method="POST" action="{{ url_for('edit_topic', topic_id=topic._id) }}">
-            <!--Field to enter topic-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix red-text text-darken-4"></i>
-                    <input id="topic_name" name="topic_name" maxlength="40"
-                     type="text" value="{{ topic.topic_name }}" class="validate" required>
-                    <label for="topic_name">Topic</label>
-                </div>
-                <!--Field to enter URL for topic image-->
-                <div class="input-field col s12">
-                    <i class="fas fa-link prefix red-text text-darken-4"></i>
-                    <input id="img_url" name="img_url"
-                     type="text" class="validate" required>
-                    <label for="img_url">Image URL for topic picture</label>
-                </div>
-            </div>              
-            <!--Form submission button-->
-            <a href="{{ url_for('get_topics') }}" class="btn col s12 center-align amber darken-4">
-                Cancel changes <i class="fas fa-times circle right"></i></a>
-            <button class="btn col s12 center-align red darken-4" type="submit">
-                Edit topic<i class="fas fa-edit right"></i>
-            </button>
-        </form>
-  </div>
+        <section class="row card-panel grey lighten-4">
+            <form class="col s12" method="POST" action="{{ url_for('edit_topic', topic_id=topic._id) }}">
+                <!--Field to enter topic-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix red-text text-darken-4"></i>
+                        <input id="topic_name" name="topic_name" maxlength="40"
+                        type="text" value="{{ topic.topic_name }}" class="validate" required>
+                        <label for="topic_name">Topic</label>
+                    </div>
+                    <!--Field to enter URL for topic image-->
+                    <div class="input-field col s12">
+                        <i class="fas fa-link prefix red-text text-darken-4"></i>
+                        <input id="img_url" name="img_url"
+                        type="text" class="validate" required>
+                        <label for="img_url">Image URL for topic picture</label>
+                    </div>
+                </div>              
+                <!--Form submission button-->
+                <a href="{{ url_for('get_topics') }}" class="btn col s12 center-align amber darken-4">
+                    Cancel changes <i class="fas fa-times circle right"></i></a>
+                <button class="btn col s12 center-align red darken-4" type="submit">
+                    Edit topic<i class="fas fa-edit right"></i>
+                </button>
+            </form>
+        </section>
+    </main>
 {% endblock %}

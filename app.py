@@ -188,9 +188,9 @@ def logout():
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
-        # delete user from session cookies
+        # clear the session
         flash("You have logged out.")
-        session.pop("user")
+        session.clear()
         return redirect(url_for("login"))
 
 
@@ -350,7 +350,7 @@ def delete_user():
         print(username)
         mongo.db.users.delete_one({"username": username})
         flash("You have deleted your account!")
-        session.pop("user")
+        session.clear()
         return render_template("register.html", username=username)
 
 
