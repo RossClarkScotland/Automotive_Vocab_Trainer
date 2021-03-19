@@ -1,68 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-    <main>
-        <header>
-            <!--Welcome message-->
-            <h4 class="center-align">Hi, {{ username }}! Any terms you add 
-                to the glossary will appear below for you to read, 
-                edit or delete.</h4>
-        </header>
-        <section>
-            <!--Button leading to delete page-->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('delete') }}" 
-                    class="red darken-4 btn-large delete-acct-btn">Delete account</a>
-                </div>
+
+    <header>
+        <!--Welcome message-->
+        <h4 class="center-align">Hi, {{ username }}! Any terms you add 
+            to the glossary will appear below for you to read, 
+            edit or delete.</h4>
+    </header>
+    <section>
+        <!--Button leading to delete page-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('delete') }}" 
+                class="red darken-4 btn-large delete-acct-btn">Delete account</a>
             </div>
-        </section>
-        <section>
-            <!--Displays all terms added by the user-->
-            {% if terms|length > 0 %}
-            <ul class="collapsible popout">
-                <h4 class="center-align">Terms added by you:</h4>
-                {% for term in terms %}
-                    {% if session["user"] == term.created_by %}
-                        <li>
-                            <div class="collapsible-header white-text grey darken-2">
-                                <!--Restricts editing and deleting rights to entry authors and admin-->
-                                {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
-                                    <div class="col s3">
-                                        <a href="{{ url_for('edit_term', term_id=term._id) }}" 
-                                        class="amber darken-3 btn term-btn">Edit</a>
-                                        <!-- Modal Trigger -->
-                                        <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
-                                        <a class=" btn modal-trigger red darken-1 term-btn" 
-                                        href="#modal{{ loop.index }}">Delete</a>
-                                        <!-- Modal Structure -->
-                                        <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
-                                            <div class="modal-content black-text center-align">
-                                                <h2 class="delete-msg">Do you really want to delete this term?</h2>
-                                                <a href="{{ url_for('delete_term', term_id=term._id) }}" 
-                                                class="modal-close red darken-4 btn-large confirm-btn">Yes</a>
-                                                <a href="#!" class="modal-close amber darken-4 btn-large confirm-btn">No</a>
-                                            </div>
+        </div>
+    </section>
+    <section>
+        <!--Displays all terms added by the user-->
+        {% if terms|length > 0 %}
+        <ul class="collapsible popout">
+            <h4 class="center-align">Terms added by you:</h4>
+            {% for term in terms %}
+                {% if session["user"] == term.created_by %}
+                    <li>
+                        <div class="collapsible-header white-text grey darken-2">
+                            <!--Restricts editing and deleting rights to entry authors and admin-->
+                            {% if session["user"] == term.created_by or session["user"] == "rossclark" %}
+                                <div class="col s3">
+                                    <a href="{{ url_for('edit_term', term_id=term._id) }}" 
+                                    class="amber darken-3 btn term-btn">Edit</a>
+                                    <!-- Modal Trigger -->
+                                    <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
+                                    <a class=" btn modal-trigger red darken-1 term-btn" 
+                                    href="#modal{{ loop.index }}">Delete</a>
+                                    <!-- Modal Structure -->
+                                    <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
+                                        <div class="modal-content black-text center-align">
+                                            <h2 class="delete-msg">Do you really want to delete this term?</h2>
+                                            <a href="{{ url_for('delete_term', term_id=term._id) }}" 
+                                            class="modal-close red darken-4 btn-large confirm-btn">Yes</a>
+                                            <a href="#!" class="modal-close amber darken-4 btn-large confirm-btn">No</a>
                                         </div>
                                     </div>
-                                {% endif %}
-                                <div class="col s9">
-                                    <strong class="term">{{ term.term_name }}</strong>
-                                    <i class="fas fa-caret-down"></i>
                                 </div>
+                            {% endif %}
+                            <div class="col s9">
+                                <strong class="term">{{ term.term_name }}</strong>
+                                <i class="fas fa-caret-down" aria-hidden="true"></i>
                             </div>
-                            <div class="collapsible-body">
-                                <p class="definition">{{ term.definition }}</p><br>
-                                <strong>Term from Course Book unit: {{ term.topic_name }}</strong>
-                                <p><em>Source of definition: {{ term.definition_source }}</em></p>
-                                <p><em>by: {{ term.created_by }}</em></p>
-                            </div>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </section>
-    </main>
+                        </div>
+                        <div class="collapsible-body">
+                            <p class="definition">{{ term.definition }}</p><br>
+                            <strong>Term from Course Book unit: {{ term.topic_name }}</strong>
+                            <p><em>Source of definition: {{ term.definition_source }}</em></p>
+                            <p><em>by: {{ term.created_by }}</em></p>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
 
 
 {% endblock %}

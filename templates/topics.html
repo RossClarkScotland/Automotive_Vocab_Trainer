@@ -1,79 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
-    <main>
-        <header>
-            <h3 class="center-align">Terms by topic</h3>
-            <h5 class="center-align">Click a topic to reveal the related terms.</h5>
-        </header>
 
-        <!--Makes adding, editing, and deleting topics available to admin alone-->
-        {% if session["user"] == "rossclark" %}
-            <section class="row">
-                <div id="add-topic_btn" class="col s12 center-align">
-                    <a href="{{ url_for('add_topic') }}" class="btn-large red darken-4">
-                        Add topic <i class="fas fa-plus-square right"></i>
-                    </a>
-                </div>
-            </section>
-            <section class="row admin-topics-view">
-                {% for topic in topics %}
-                    <!--Adds class to topic cards to increase margins in admin view-->
-                    <div class="col s12 m4 topic_img topic-card">
-                        <div class="card">
-                            <div class="card-image">
-                                <!--Images via URL to allow new images to be uploaded 
-                                when admin adds a new category -->
-                                <img src="{{ topic.img_url }}" alt="topic image">
+    <header>
+        <h3 class="center-align">Terms by topic</h3>
+        <h5 class="center-align">Click a topic to reveal the related terms.</h5>
+    </header>
+
+    <!--Makes adding, editing, and deleting topics available to admin alone-->
+    {% if session["user"] == "rossclark" %}
+        <section class="row">
+            <div id="add-topic_btn" class="col s12 center-align">
+                <a href="{{ url_for('add_topic') }}" class="btn-large red darken-4">
+                    Add topic <i class="fas fa-plus-square right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+        <section class="row admin-topics-view">
+            {% for topic in topics %}
+                <!--Adds class to topic cards to increase margins in admin view-->
+                <div class="col s12 m4 topic_img topic-card">
+                    <div class="card">
+                        <div class="card-image">
+                            <!--Images via URL to allow new images to be uploaded 
+                            when admin adds a new category -->
+                            <img src="{{ topic.img_url }}" alt="topic image">
+                        </div>
+                    <div class="card-action center-align">
+                        <a href="{{url_for('get_topic', topic_id=topic._id)}}" 
+                        class="btn green accent-4 topic-btn">{{ topic.topic_name }}</a>
+                    </div>
+                    <div class="card-action center-align">
+                        <a href="{{ url_for('edit_topic', topic_id=topic._id) }}" 
+                        class="btn amber darken-4 topic-btn">Edit</a>
+                    </div>
+                    <div class="card-action center-align">
+                    <!-- Modal Trigger -->
+                    <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
+                        <a class=" btn modal-trigger topic-btn red darken-1" 
+                        href="#modal{{ loop.index }}">Delete</a>
+                        <!-- Modal Structure -->
+                        <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
+                            <div class="modal-content black-text center-align">
+                                <h2 class="delete-msg">Do you really want to delete this topic?</h2>
+                                <a href="{{ url_for('delete_topic', topic_id=topic._id) }}" 
+                                class="modal-close red darken-4 btn-large confirm-btn">Yes</a>
+                                <a href="#!" class="modal-close amber darken-4 btn-large confirm-btn">No</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    {% endif %}
+    
+    {% if session["user"] != "rossclark" %}
+    <!--Sets student view of topics page-->
+        <section class="row student-topics-view">
+            {% for topic in topics %}
+                <div class="col s12 m4 topic_img">
+                    <div class="card">
+                        <div class="card-image">
+                            <!--Images via URL to allow new images to be uploaded 
+                            when admin adds a new category -->
+                            <img src="{{ topic.img_url }}" alt="topic image">
+                        </div>
                         <div class="card-action center-align">
                             <a href="{{url_for('get_topic', topic_id=topic._id)}}" 
-                            class="btn green accent-4 topic-btn">{{ topic.topic_name }}</a>
-                        </div>
-                        <div class="card-action center-align">
-                            <a href="{{ url_for('edit_topic', topic_id=topic._id) }}" 
-                            class="btn amber darken-4 topic-btn">Edit</a>
-                        </div>
-                        <div class="card-action center-align">
-                        <!-- Modal Trigger -->
-                        <!--href and id set to 'modal{{ loop.index }}' as each modal needs a unique id-->
-                            <a class=" btn modal-trigger topic-btn red darken-1" 
-                            href="#modal{{ loop.index }}">Delete</a>
-                            <!-- Modal Structure -->
-                            <div id="modal{{ loop.index }}" class="modal modal-fixed-footer">
-                                <div class="modal-content black-text center-align">
-                                    <h2 class="delete-msg">Do you really want to delete this topic?</h2>
-                                    <a href="{{ url_for('delete_topic', topic_id=topic._id) }}" 
-                                    class="modal-close red darken-4 btn-large confirm-btn">Yes</a>
-                                    <a href="#!" class="modal-close amber darken-4 btn-large confirm-btn">No</a>
-                                </div>
-                            </div>
+                            class="btn red darken-4 topic-btn">{{topic.topic_name }}</a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+            {% endfor %}
             </section>
-        {% endif %}
-        
-        {% if session["user"] != "rossclark" %}
-        <!--Sets student view of topics page-->
-            <section class="row student-topics-view">
-                {% for topic in topics %}
-                    <div class="col s12 m4 topic_img">
-                        <div class="card">
-                            <div class="card-image">
-                                <!--Images via URL to allow new images to be uploaded 
-                                when admin adds a new category -->
-                                <img src="{{ topic.img_url }}" alt="topic image">
-                            </div>
-                            <div class="card-action center-align">
-                                <a href="{{url_for('get_topic', topic_id=topic._id)}}" 
-                                class="btn red darken-4 topic-btn">{{topic.topic_name }}</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-                </section>
-        {% endif %}
-    </main>
+    {% endif %}
 
 {% endblock %}

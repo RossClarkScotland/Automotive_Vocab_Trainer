@@ -1,51 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-    <main>
-        <header>
-            <h3 class="center-align">Log in</h3>
-        </header>
+    <header>
+        <h3 class="center-align">Log in</h3>
+    </header>
 
-        <section class="row">
-            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-                <div class="card-panel">
-                    <!-- Field for user to enter username -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
-                            <input id="username" name="username" type="text" minlength="6"
-                            maxlength="16" pattern="^[a-zA-Z0-9]{6,16}$" class="validate" required>
-                            <label for="username">Username</label>
-                        </div>
-                    </div>
-                    <!-- Field for user to enter password -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                            <input id="password" name="password" type="password" minlength="6"
-                            maxlength="16" pattern="^[a-zA-Z0-9]{6,16}$" class="validate" required>
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <!-- Field for logging in -->
-                    <div class="row">
-                        <button type="submit" class="col m8 offset-m2 btn-large 
-                        red darken-4 text-shadow enter-btn">
-                            Log in <i class="fas fa-sign-in-alt"></i>
-                        </button>
+    <section class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel">
+                <!-- Field for user to enter username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-cog prefix light-blue-text text-darken-4" aria-hidden="true"></i>
+                        <input id="username" name="username" type="text" minlength="6"
+                        maxlength="16" pattern="^[a-zA-Z0-9]{6,16}$" class="validate" required>
+                        <label for="username">Username</label>
                     </div>
                 </div>
-            </form>
-        </section>
-
-        <!--Link to registering a new account-->
-        <section class="row">
-            <div class="col s12">
-                <p class="center-align">
-                    Not registered yet? <a href="{{ url_for('register') }}">
-                        Register a new account</a>
-                </p>
+                <!-- Field for user to enter password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix light-blue-text text-darken-4" aria-hidden="true"></i>
+                        <input id="password" name="password" type="password" minlength="6"
+                        maxlength="16" pattern="^[a-zA-Z0-9]{6,16}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- Field for logging in -->
+                <div class="row">
+                    <button type="submit" class="col m8 offset-m2 btn-large 
+                    red darken-4 text-shadow enter-btn">
+                        Log in <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
-        </section>
-    </main>
+        </form>
+    </section>
+
+    <!--Link to registering a new account-->
+    <section class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Not registered yet? <a href="{{ url_for('register') }}">
+                    Register a new account</a>
+            </p>
+        </div>
+    </section>
 
 {% endblock %}
