@@ -21,14 +21,18 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/home")
-# Opens the home page
 def home():
+    """
+    Open the home page
+    """
     return render_template("index.html")
 
 
 @app.route("/get_terms")
-# Opens terms template, lists all course terms alphabetically
 def get_terms():
+    """
+    Open terms template, list all course terms alphabetically
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -37,8 +41,10 @@ def get_terms():
 
 
 @app.route("/definitions_first")
-# Shows terms page terms by definition first
 def definitions_first():
+    """
+    Show terms page terms by definition first
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -47,8 +53,10 @@ def definitions_first():
 
 
 @app.route("/topics_definitions_first/<topic_id>")
-# Shows terms in topic pages by definition first
 def topics_definitions_first(topic_id):
+    """
+    Shows terms in topic pages by definition first
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -58,8 +66,10 @@ def topics_definitions_first(topic_id):
 
 
 @app.route("/shuffle_deck")
-# Shuffles the order of terms on terms page
 def shuffle_deck():
+    """
+    Shuffle the order of terms on terms page
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -69,8 +79,10 @@ def shuffle_deck():
 
 
 @app.route("/shuffle_definitions_first")
-# Shuffles terms page items when definitions display first
 def shuffle_definitions_first():
+    """
+    Shuffle terms page items when definitions display first
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -80,8 +92,10 @@ def shuffle_definitions_first():
 
 
 @app.route("/shuffle_topics_definitions_first/<topic_id>")
-# Shuffles topics pages' items when definitions display first
 def shuffle_topics_definitions_first(topic_id):
+    """
+    Shuffle topics pages' items when definitions display first
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -92,8 +106,10 @@ def shuffle_topics_definitions_first(topic_id):
 
 
 @app.route("/search", methods=["GET", "POST"])
-# Searches terms within terms page
 def search():
+    """
+    Search terms within terms page
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -103,10 +119,14 @@ def search():
 
 
 @app.route("/register", methods=["GET", "POST"])
-# Enables user registration
 def register():
+    """
+    Enable user registration
+    """
     if request.method == "POST":
-        # Checks whether someone else has already taken this username
+        """
+        Checks whether someone else has already taken this username
+        """
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -114,25 +134,32 @@ def register():
             flash("Someone else already has this username.")
             return redirect(url_for("register"))
 
-        # Credit to my fellow student Helen Goatly for helping me work out,
-        # via Slack, that the two following lines of code were necessary
+        """
+        Credit to my fellow student Helen Goatly for helping me work out,
+        via Slack, that the two following lines of code were necessary
+        """
         password = request.form.get("password")
         passwordcheck = request.form.get("passwordcheck")
-
-        # Ensures the user has entered their password as intended
+        """
+        Ensures the user has entered their password as intended
+        """
         if password != passwordcheck:
             flash("Passwords do not match! Please try again.")
             return redirect(url_for("register"))
 
         if password == passwordcheck:
-        # Takes info from form and stores it in the database
+            """
+            Takes info from form and stores it in the database
+            """
             register = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(request.form.get("password"))
             }
             mongo.db.users.insert_one(register)
 
-            # new user goes into session cookie
+            """
+            new user goes into session cookie
+            """
             session["user"] = request.form.get("username").lower()
             flash("All systems go! You have registered successfully!")
             return redirect(url_for("profile", username=session["user"]))
@@ -141,8 +168,10 @@ def register():
 
 
 @app.route("/login", methods=["GET", "POST"])
-# Enables users to log in
 def login():
+    """
+    Enable users to log in
+    """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username":request.form.get("username").lower()})
@@ -166,12 +195,16 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
-# Renders user profile page
 def profile(username):
+    """
+    Render user profile page
+    """
     if 'user' not in session:
         return render_template("login.html")
     else:
-        # gets username of current session user from the database
+        """
+        gets username of current session user from the database
+        """
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         terms = list(mongo.db.terms.find().sort("term_name", 1))
@@ -183,20 +216,26 @@ def profile(username):
 
 
 @app.route("/logout")
-# Logs user out
 def logout():
+    """
+    Log user out
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
-        # clear the session
+        """
+        clear the session
+        """
         flash("You have logged out.")
         session.clear()
         return redirect(url_for("login"))
 
 
 @app.route("/add_term", methods=["GET", "POST"])
-# Allows user to add to the terms list
 def add_term():
+    """
+    Allow user to add to the terms list
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     elif request.method == "POST":
@@ -217,8 +256,10 @@ def add_term():
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
-# Allows users to edit items in the terms list
 def edit_term(term_id):
+    """
+    Allow users to edit items in the terms list
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     elif request.method == "POST":
@@ -239,8 +280,10 @@ def edit_term(term_id):
 
 
 @app.route("/delete_term/<term_id>")
-# Allows user to delete from the terms list
 def delete_term(term_id):
+    """
+    Allow user to delete from the terms list
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -250,8 +293,10 @@ def delete_term(term_id):
 
 
 @app.route("/get_topics")
-# renders topics page
 def get_topics():
+    """
+    render topics page
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -260,8 +305,10 @@ def get_topics():
 
 
 @app.route("/add_topic", methods=["GET", "POST"])
-# Enables user to add a new topic
 def add_topic():
+    """
+    Enable user to add a new topic
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     elif request.method == "POST":
@@ -277,8 +324,10 @@ def add_topic():
 
 
 @app.route("/edit_topic/<topic_id>", methods=["GET", "POST"])
-# Enables user to edit a topic
 def edit_topic(topic_id):
+    """
+    Enable user to edit a topic
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     elif request.method == "POST":
@@ -295,8 +344,10 @@ def edit_topic(topic_id):
 
 
 @app.route("/delete_topic/<topic_id>")
-# Enables user to delete a topic
 def delete_topic(topic_id):
+    """
+    Enable user to delete a topic
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -306,8 +357,10 @@ def delete_topic(topic_id):
 
 
 @app.route("/get_topic/<topic_id>")
-# Renders get_topic page
 def get_topic(topic_id):
+    """
+    Render get_topic page
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -317,8 +370,10 @@ def get_topic(topic_id):
 
 
 @app.route("/shuffle_topic/<topic_id>")
-# Shuffles terms within individual topic pages
 def shuffle_topic(topic_id):
+    """
+    Shuffle terms within individual topic pages
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -329,8 +384,10 @@ def shuffle_topic(topic_id):
 
 
 @app.route("/delete")
-# Renders delete account page
 def delete():
+    """
+    Render delete account page
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -340,8 +397,10 @@ def delete():
 
 
 @app.route("/delete_user")
-# Deletes user from the database
 def delete_user():
+    """
+    Delete user from the database
+    """
     if 'user' not in session:
         return redirect(url_for("login"))
     else:
@@ -355,8 +414,10 @@ def delete_user():
 
 
 @app.route("/how_to_use")
-# Opens the How to use this site page
 def how_to_use():
+    """
+    Open the How to use this site page
+    """
     return render_template("how_to_use.html")
 
 
