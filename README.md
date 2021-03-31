@@ -1,46 +1,96 @@
 # **English for Automotive Engineers**
 
-_English for Automotive Engineers_ is the minimum viable project for a mobile-first web application to help advanced English learners learn automotive industry-related vocabulary. The app supplements the textbook for an advanced English course, also entitled English for Automotive Engineers, at the Technical University Munich. This course is taught by me, the app designer.
+_English for Automotive Engineers_ is the minimum viable project for a mobile-first 
+web application to help advanced English learners learn automotive industry-related vocabulary. 
+The app supplements the textbook for an advanced English course, also entitled 
+English for Automotive Engineers, at the Technical University Munich. 
+This course is taught by me, the app designer.
 
-The full site is deployed via Heroku at: [Automotive Vocabulary Trainer (automotive-vocabulary-trainer.herokuapp.com)](https://automotive-vocabulary-trainer.herokuapp.com/)
+The full site is deployed via Heroku at: [Automotive Vocabulary Trainer 
+(automotive-vocabulary-trainer.herokuapp.com)](https://automotive-vocabulary-trainer.herokuapp.com/)
 
 ## **UX**
 
-NOTE: A full user experience design document, detailing the five planes of design for _English for Automotive Engineers_ appears as a separate document. The UX section in this document provides an overview.
+NOTE: A full user experience design document, detailing the five planes of design for
+ _English for Automotive Engineers_ appears as a separate document. The UX section in 
+ this document provides an overview.
 
-In each chapter of the _English for Automotive Engineers_ textbook, students encounter new automotive terms, any of which may appear on a vocabulary task in the final exam. An additional source of vocabulary that may occur in the final exam comes via students&#39; presentations, for which students provide one another with a list of 10 automotive-related terms, and explanations for these terms, that will occur during the presentation. The vocabulary portion of the exam is the one students most frequently have concerns about. To help them study for this part of the exam then, the _English for Automotive Engineers_ app A) gathers all the exam-relevant vocabulary, both from the textbook and the student presentations, in one place, an B) provides students with an effective means of learning this vocabulary using active recall techniques. [The Effect of Word Recall on English Vocabulary Learning | IEEE Conference Publication | IEEE Xplore](https://ieeexplore.ieee.org/document/5476669)
+In each chapter of the _English for Automotive Engineers_ textbook, students encounter 
+new automotive terms, any of which may appear on a vocabulary task in the final exam. 
+An additional source of vocabulary that may occur in the final exam comes via students&#39;
+presentations, for which students provide one another with a list of 10 automotive-related
+terms, and explanations for these terms, that will occur during the presentation. 
+The vocabulary portion of the exam is the one students most frequently have concerns about.
+To help them study for this part of the exam then, the _English for Automotive Engineers_ app
+A) gathers all the exam-relevant vocabulary, both from the textbook and the student presentations,
+in one place, an B) provides students with an effective means of learning this vocabulary using 
+active recall techniques. 
+[The Effect of Word Recall on English Vocabulary Learning | IEEE Conference Publication | IEEE Xplore]
+(https://ieeexplore.ieee.org/document/5476669)
 
-Users of _English for Automotive Engineers_ will be first and foremost participants of the English course of the same name at the Technical University Munich. These participants are primarily from Germany, China, and Spain (though past students have come from a broad range of countries) and are primarily bachelor&#39;s degree students studying automotive engineering, mechanical engineering, or another related subject. The English level of the students is advanced, at least C1 according to the Common European Framework of Reference for Languages (see: [The CEFR Levels (coe.int)](https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions) ).
+Users of _English for Automotive Engineers_ will be first and foremost participants of the 
+English course of the same name at the Technical University Munich. These participants are
+primarily from Germany, China, and Spain (though past students have come from a broad range
+of countries) and are primarily bachelor&#39;s degree students studying automotive engineering,
+mechanical engineering, or another related subject. The English level of the students is advanced,
+at least C1 according to the Common European Framework of Reference for Languages 
+(see: [The CEFR Levels (coe.int)]
+(https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions) ).
 
-Users of the web app the will be young, tech-savvy students used to working with the textbook for the English course at the Technical University Munich. As such: the vocabulary on the app should be the same as that in the textbook; the app should provide a means of filtering the vocabulary according to each chapter in the textbook; and, where possible, images used on the site should match those used in the textbook.
+Users of the web app the will be young, tech-savvy students used to working with the textbook
+ for the English course at the Technical University Munich. As such: the vocabulary on the app
+  should be the same as that in the textbook; the app should provide a means of filtering the
+   vocabulary according to each chapter in the textbook; and, where possible, images used on
+    the site should match those used in the textbook.
 
 ### **What technology is appropriate?**
 
-The site must work equally well on smaller, medium, and larger devices. Students of the English for Automotive Engineers course customarily bring their laptops and / or tablets to work with in class, and may use the web app as a reference during lessons. However, as the teacher I frequently advise my students to use their &#39;dead time&#39; to learn vocabulary, i.e. time they are on the underground, waiting in line at the supermarket, etc. As such, the app should work well on mobile phones to facilitate this type of learning.
+The site must work equally well on smaller, medium, and larger devices. Students of the 
+English for Automotive Engineers course customarily bring their laptops and / or tablets
+to work with in class, and may use the web app as a reference during lessons. However, 
+as the teacher I frequently advise my students to use their &#39;dead time&#39; to learn
+vocabulary, i.e. time they are on the underground, waiting in line at the supermarket,
+etc. As such, the app should work well on mobile phones to facilitate this type of learning.
 
-Given the strict data protection laws of the university and of the German and Bavarian governments regarding students&#39; personal information, the website cannot require students to provide email addresses, telephone numbers, their real names, etc.
+Given the strict data protection laws of the university and of the German and Bavarian 
+governments regarding students&#39; personal information, the website cannot require 
+students to provide email addresses, telephone numbers, their real names, etc.
 
 **Why is this so special?**
 
-_English for Automotive Engineers_ is dedicated specifically to the needs of the English learners on the course of the same name. As such, the web app will provide students with a bespoke and more satisfying learning experience.
+_English for Automotive Engineers_ is dedicated specifically to the needs of the 
+English learners on the course of the same name. As such, the web app will provide 
+students with a bespoke and more satisfying learning experience.
 
 ### **User stories and how the site meets these needs**
 
 User story 1:
 
-&quot;As the teacher of English for Automotive Engineers, I want a one-stop shop to where I can upload all the vocabulary from the textbook, the students upload the vocabulary from their presentations, and where the students can learn the relevant vocabulary using flashcard-like active recall.&quot;
+&quot;As the teacher of English for Automotive Engineers, I want a one-stop shop
+where I can upload all the vocabulary from the textbook, the students upload the
+vocabulary from their presentations, and where the students can learn the relevant
+vocabulary using flashcard-like active recall.&quot;
 
 _How the site meets this need:_
 
-- The site includes all the vocabulary from the textbook, allows students to easily add their own from presentations, and displays all vocabulary items in Materialize collapsible accordions which encourage active recall by only displaying the term at first, allowing the user to try to recall the meaning before revealing said meaning with a click. The site also allows the user to display the definition first, clicking to reveal the term after active recall, and to shuffle the order of the vocabulary items.
+- The site includes all the vocabulary from the textbook, allows students to easily 
+add their own from presentations, and displays all vocabulary items in Materialize 
+collapsible accordions which encourage active recall by only displaying the term at first,
+allowing the user to try to recall the meaning before revealing said meaning with a click.
+The site also allows the user to display the definition first, clicking to reveal the term 
+after active recall, and to shuffle the order of the vocabulary items.
 
 User story 2:
 
-&quot;As a student preparing to work in the automotive industry, I want a site where I can learn the industry-related vocabulary that I&#39;ll need in my future career.&quot;
+&quot;As a student preparing to work in the automotive industry, I want a site where I can 
+learn the industry-related vocabulary that I&#39;ll need in my future career.&quot;
 
 _How the site meets this need:_
 
-- The site includes all the vocabulary from the textbook, all of which has been selected by the teacher as automotive-industry-relevant vocabulary, and allows students to upload industry-related vocabulary on automotive topics that they themselves have chosen for their presentations.
+- The site includes all the vocabulary from the textbook, all of which has been selected
+by the teacher as automotive-industry-relevant vocabulary, and allows students to upload
+industry-related vocabulary on automotive topics that they themselves have chosen for 
+their presentations.
 
 User story 3:
 
@@ -60,7 +110,7 @@ _How the site meets this need:_
 
 ## **Features: Existing features (For screenshots of features, see the separate UX PDF)**
 
-### **A video site tour demonstrating the main features of the wee app can be viewed at the link below**
+### **A video site tour demonstrating the main features of the web app can be viewed at the link below**
 https://www.screencast.com/t/ATSFjOR2cAI5
 
 ### **All pages**
@@ -222,16 +272,16 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 
 In addition to checking the application&#39;s functionality using browser developer tools, the site has been manually checked and found to function as desired on the following devices:
 
-- Laptops:
+**Laptops:**
   - Lenovo Yoga 530 (checked by both myself and my wife, Anita)
   - HP 255 G5 Notebook (checked by both myself and my wife, Anita)
   - Macbook Air (checked by my father, George)
   - Lenovo Thinkpad x390 (checked by my colleague, Rose)
-- Tablets:
+**Tablets:**
   - Kindle Fire 3 HD (checked by both myself and my wife, Anita)
   - iPad mini 3 (checked by my father, George)
   - iPad (checked by my aunt, Vivien)
-- Smartphones:
+**Smartphones:**
   - Samsung Galaxy J4+ (checked by myself)
   - Samsung A50 (checked by my wife, Anita)
   - Samsung 20A (checked by my colleague, Elizabeth)
@@ -282,7 +332,7 @@ To run the code for _English for Automotive Engineers_ locally, one may:
 17. Open the file you wish to clone to.
 18. Enter the following command into the terminal:
 
-$ git clone [https://github.com/RossClarkScotland/Milestone2](https://github.com/RossClarkScotland/Milestone-Project-Literary-Edinburgh)
+$ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
 
 Further details are available via: [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
