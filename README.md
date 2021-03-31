@@ -94,19 +94,25 @@ their presentations.
 
 User story 3:
 
-&quot;As a student on the English for Automotive Engineers course, I want to an easy way to fulfill the course requirement of making my presentation vocabulary available to my course mates.&quot;
+&quot;As a student on the English for Automotive Engineers course, I want to an easy way
+to fulfill the course requirement of making my presentation vocabulary available to my 
+course mates.&quot;
 
 _How the site meets this need:_
 
-- The site provides an easy way for students to upload their vocabulary to a platform that all students in the course have access.
+- The site provides an easy way for students to upload their vocabulary to a platform 
+that all students in the course have access.
 
 User story 4:
 
-&quot;As a student on the English for Automotive Engineers course, I want to be able to study all the exam-relevant vocabulary from the textbook and the presentations in one place.&quot;
+&quot;As a student on the English for Automotive Engineers course, I want to be able 
+to study all the exam-relevant vocabulary from the textbook and the presentations in one place.&quot;
 
 _How the site meets this need:_
 
-- The site gathers all the exam-relevant vocabulary in one place, allows users to search for individual items or find them filtered by topic / textbook chapter, and provides an active recall method of memorizing the terms for the exam via the Materialize collapsible accordions.
+- The site gathers all the exam-relevant vocabulary in one place, allows users to search for 
+individual items or find them filtered by topic / textbook chapter, and provides an active recall 
+method of memorizing the terms for the exam via the Materialize collapsible accordions.
 
 ## **Features: Existing features (For screenshots of features, see the separate UX PDF)**
 
@@ -115,21 +121,32 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 
 ### **All pages**
 
-- The navigation bar allows users to easily navigate the pages of the site by giving them a simple site overview.
-- As it provides a cleaner aesthetic on smaller devices, the navigation bar appears on the homepage in the form of a hamburger-style dropdown menu.
+- The navigation bar allows users to easily navigate the pages of the site by giving them 
+a simple site overview.
+- As it provides a cleaner aesthetic on smaller devices, the navigation bar appears on the 
+homepage in the form of a hamburger-style dropdown menu.
 
 ### **Index.html**
 
-- Via media queries, the background image, navigation bar, and page title will change orientation, from portrait to landscape, depending on the size of the screen.
-- Both the image for larger devices and that for smaller devices come from the English for Automotive Engineers course textbook, thus creating a sense of familiarity and cohesiveness for students / users.
+- Via media queries, the background image, navigation bar, and page title will change 
+orientation, from portrait to landscape, depending on the size of the screen.
+- Both the image for larger devices and that for smaller devices come from the 
+English for Automotive Engineers course textbook, thus creating a sense of familiarity
+and cohesiveness for students / users.
 
 ### **register.html**
 
-- This page allows users to register using simply a username and a password, i.e. to comply with university rules on not gathering personal information from students.
-- Both the username and password must be a minimum of 6 characters. If this is not met, the user receives a warning message.
-- Users must enter their password twice while registering, to ensure that they have entered the password correctly. If the password does not match, registration fails and the user receives a flask flash message telling them so.
-- The bottom of the page contains a prompt and a link to the log in page for those who are already registered.
-- Upon successful registration, the user is directed to the profile page, which contains a welcoming flash message and a username-customized instructional message.
+- This page allows users to register using simply a username and a password, i.e. to 
+comply with university rules on not gathering personal information from students.
+- Both the username and password must be a minimum of 6 characters. If this is not met,
+ the user receives a warning message.
+- Users must enter their password twice while registering, to ensure that they have entered
+ the password correctly. If the password does not match, registration fails and the user 
+ receives a flask flash message telling them so.
+- The bottom of the page contains a prompt and a link to the log in page for those 
+who are already registered.
+- Upon successful registration, the user is directed to the profile page, which contains
+ a welcoming flash message and a username-customized instructional message.
 
 ### **login.html**
 
@@ -137,14 +154,18 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 - The page also contains a link to register.html for those users who have not yet registered.
 - If either the username or the password is less than 6 characters, the user receives a warning.
 - If either the username or the password is incorrect, the user receives a Flask flash message as a warning.
-- Upon successfully logging in, the user is directed to the profile page, which contains a customized welcome back Flask flash message and a username-customized instructional message.
+- Upon successfully logging in, the user is directed to the profile page, which contains a 
+customized welcome back Flask flash message and a username-customized instructional message.
 
 ### **profile.html**
 
-- The profile page greets new users with a welcoming flash message upon registering and returning users with a username-customized welcome back flash message upon logging in.
+- The profile page greets new users with a welcoming flash message upon registering and 
+returning users with a username-customized welcome back flash message upon logging in.
 - A username-customized message below the flash message informs users of how they can use their profile.
-- A &#39;delete account&#39; button allows users to navigate to a delete page where they can easily delete their account if they so wish.
-- A list of all automotive terms added to the terms database appears on the user&#39;s profile. Users may read, edit, or delete those terms from their profile page.
+- A &#39;delete account&#39; button allows users to navigate to a delete page where 
+they can easily delete their account if they so wish.
+- A list of all automotive terms added to the terms database appears on the user&#39;s
+profile. Users may read, edit, or delete those terms from their profile page.
 
 ### **delete.html**
 
@@ -153,40 +174,60 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 
 ### **terms.html**
 
-- This page contains all automotive terms in the database, i.e. from both the course textbook and that users have uploaded from their student presentations.
+- This page contains all automotive terms in the database, i.e. from both the course 
+textbook and that users have uploaded from their student presentations.
 - A search bar allows users to search all terms for specific terms and key words.
-- The terms appear in Materialize collapsible accordion items, allowing users to use active recall techniques to try to remember what a term means before displaying its definition.
-- Users may click an &#39;add term&#39; button to navigate to a form which allows them to upload a term from their presentations.
+- The terms appear in Materialize collapsible accordion items, allowing users to use 
+active recall techniques to try to remember what a term means before displaying its definition.
+- Users may click an &#39;add term&#39; button to navigate to a form which allows them 
+to upload a term from their presentations.
 - Users may click a &#39;shuffle&#39; button to shuffle the order in which the terms appear.
-- Users may click a &#39;by definition&#39; button to show the definition first, then try to recall which word this definition matches with before opening up the accordion to reveal the answer.
-- Each term that the user has themselves added to the database appears with &#39;delete&#39; and &#39;edit&#39; buttons, thus allowing the user to either delete a term from this page (with a modal popup requiring confirmation of the action) or navigate to the edit term page so as to update the content.
-- The administrative log-in allows the site administrator to delete or edit all terms, i.e. both those added by the administrator, from the textbook, and those added by other users.
+- Users may click a &#39;by definition&#39; button to show the definition first, then try to 
+recall which word this definition matches with before opening up the accordion to reveal the answer.
+- Each term that the user has themselves added to the database appears with &#39;delete&#39; 
+and &#39;edit&#39; buttons, thus allowing the user to either delete a term from this page 
+(with a modal popup requiring confirmation of the action) or navigate to the edit term 
+page so as to update the content.
+- The administrative log-in allows the site administrator to delete or edit all terms, 
+i.e. both those added by the administrator, from the textbook, and those added by other users.
 
 ### **definitions\_first.html**
 
-- This is the page that users reach by clicking the &#39;by definition&#39; button on terms.html. The page contains all the same features as terms.html, but displays the definition first in the Materialize accordion, the accordion opening up to reveal the term.
-- Users may switch back to viewing the terms by term first by clicking the &#39;by term&#39; button (this appears where the &#39;by definition&#39; button appears on terms.html).
+- This is the page that users reach by clicking the &#39;by definition&#39; button on 
+terms.html. The page contains all the same features as terms.html, but displays the 
+definition first in the Materialize accordion, the accordion opening up to reveal the term.
+- Users may switch back to viewing the terms by term first by clicking the &#39;by term&#39; 
+button (this appears where the &#39;by definition&#39; button appears on terms.html).
 
 ### **add\_term.html**
 
-- This page allows users to add a new term to the database / site list of terms. Via a form, users add the term, the definition, the topic to which the term belongs, and the source of the definition.
-- Via the administrative login, the site admin may attribute the term to any of the topics on the website, i.e. those which correspond to the English course&#39;s textbook. The admin does so by selecting the topic from a dropdown menu. Each topic item in the dropdown contains the corresponding image for that topic on the topics.html page.
-- Users other than the site admin may only select &#39;presentations&#39; as the topic to which they attribute a new term, given that students on the English course will only be submitting terms from the presentations they give in class.
+- This page allows users to add a new term to the database / site list of terms. Via a form,
+ users add the term, the definition, the topic to which the term belongs, and the source of the definition.
+- Via the administrative login, the site admin may attribute the term to any of the topics on the website,
+ i.e. those which correspond to the English course&#39;s textbook. The admin does so by selecting the topic
+  from a dropdown menu. Each topic item in the dropdown contains the corresponding image for that topic on the topics.html page.
+- Users other than the site admin may only select &#39;presentations&#39; as the topic to which they attribute 
+a new term, given that students on the English course will only be submitting terms from the presentations they give in class.
 
 ### **edit\_term.html**
 
-- This page allows users to edit the term, definition, topic, and definition source of any term that they themselves have added. Although the site admin may edit any term that any user has added.
+- This page allows users to edit the term, definition, topic, and definition source of any term
+ that they themselves have added. Although the site admin may edit any term that any user has added.
 - The user may either complete or cancel the edits by clicking either the &#39;Edit&#39; or &#39;Cancel&#39; buttons.
 
 ### **topics.html**
 
 - This page contains every topic in the English course textbook from which the terms in the database are drawn.
-- The topics are displayed with a photo, where possible the same photo as that used in the corresponding chapter of the course textbook, and the topic title on a button. By pressing the button for a particular topic, users access a list of all the words in the database / site glossary attributed to that specific topic.
-- The site admin view of this page also includes buttons which allow the admin to add new topics or edit or delete existing topics. These options are not available to other users.
+- The topics are displayed with a photo, where possible the same photo as that used in the corresponding chapter
+ of the course textbook, and the topic title on a button. By pressing the button for a particular topic, users 
+ access a list of all the words in the database / site glossary attributed to that specific topic.
+- The site admin view of this page also includes buttons which allow the admin to add new topics or edit or 
+delete existing topics. These options are not available to other users.
 
 ### **add\_topic.html**
 
-- This page allows the site admin to add a new automotive topic name and image to the site by entering the new topic name and the image URL into a form.
+- This page allows the site admin to add a new automotive topic name and image to the site by entering the 
+new topic name and the image URL into a form.
 
 ### **edit\_topic.html**
 
@@ -195,24 +236,33 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 
 ### **get\_topic.html**
 
-- This page provides the user with a list of collapsible accordion vocabulary items matching one specific topic, correlating to a chapter of the same name of the English for Automotive Engineers class textbook.
-- The page contains the topic image and the ability to shuffle the order of the terms or display the terms by definition first.
-- The user may edit or delete any terms that they themselves have added, although for users other than the administrator this feature will only apply to the items under the Presentations topic.
+- This page provides the user with a list of collapsible accordion vocabulary items matching one specific topic, 
+correlating to a chapter of the same name of the English for Automotive Engineers class textbook.
+- The page contains the topic image and the ability to shuffle the order of the terms or display 
+the terms by definition first.
+- The user may edit or delete any terms that they themselves have added, although for users other than 
+the administrator this feature will only apply to the items under the Presentations topic.
 
 ### **topics\_definitions\_first.html**
 
-- This page is reached by clicking the &#39;By definition&#39; button on get\_topic.html. topics\_definitions.html contains all the features of get\_topic.html but displays the vocabulary by definition first and, upon the user&#39;s click, opens up the collapsible accordion to display the term
+- This page is reached by clicking the &#39;By definition&#39; 
+button on get\_topic.html. topics\_definitions.html contains all the features of get\_topic.html but displays the vocabulary
+ by definition first and, upon the user&#39;s click, opens up the collapsible accordion to display the term
 - Users may return to the get\_topic.html, i.e. terms-first, topic-specific, display by clicking the &#39;by term&#39; button.
 
 ### **how\_to\_use.html**
 
-- This page contains a custom made, embedded YouTube video which gives users a video tutorial on how to use and make the most of the site.
+- This page contains a custom made, embedded YouTube video which gives users a video
+tutorial on how to use and make the most of the site.
 
 ## **Features: Features left to implement**
 
-- Write original definitions for words. At present, the definitions come from dictionaries and websites. For the website to be used properly, copyright-free definitions will need to be written. The definitions used are used only for educational purposes and no copyright infringement is intended.
+- Write original definitions for words. At present, the definitions come from dictionaries and 
+websites. For the website to be used properly, copyright-free definitions will need to be written. 
+The definitions used are used only for educational purposes and no copyright infringement is intended.
 - Allow users to create a list of words they want to learn most / find most difficult to learn.
-- Add a spaced repetition feature to the user-created list, i.e. which shows them words they find difficult more frequently and words.
+- Add a spaced repetition feature to the user-created list, i.e. which shows them words they find 
+difficult more frequently and words.
 
 ## **Technologies used**
 
@@ -233,7 +283,8 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 - Jinja: [Jinja — Jinja Documentation (2.11.x) (palletsprojects.com)](https://jinja.palletsprojects.com/en/2.11.x/)
   - Jinja was used as the templating language for Python.
 - jQuery: [https://code.jquery.com/](https://code.jquery.com/)
-  - The site uses jQuery to initialize Materialize modal alerts, collapsible accordions, and dropdown menus, and for placement of the navbar.
+  - The site uses jQuery to initialize Materialize modal alerts, collapsible accordions, 
+  and dropdown menus, and for placement of the navbar.
 - Mongo DB Atlas: [https://www.mongodb.com/](https://www.mongodb.com/)
   - Mongo DB Atlas was used as the database to store the automotive terms and topics as well as registered site users.
 - Werkzeug: [Utilities — Werkzeug Documentation (1.0.x) (palletsprojects.com)](https://werkzeug.palletsprojects.com/en/1.0.x/utils/)
@@ -247,30 +298,42 @@ https://www.screencast.com/t/ATSFjOR2cAI5
 - Favicon.io
   - favicon.io was used to add a favicon to the site. [https://favicon.io/favicon-generator/](https://favicon.io/favicon-generator/)
 - word2md.com: [https://word2md.com/](https://word2md.com/)
-  - To ensure correct markdown in the first draft of this Read Me file a Microsoft Word document of the text was run through word2md.com. The resulting markdown and text was then edited according to the preferences of the author using rules set out in the _Mastering Markdown_ document at GitHub.com. [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
+  - To ensure correct markdown in the first draft of this Read Me file a Microsoft Word document of the text 
+  was run through word2md.com. The resulting markdown and text was then edited according to the preferences
+   of the author using rules set out in the _Mastering Markdown_ document at GitHub.com. 
+   [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
 
 ## **Testing**
 
-- I manually tested the site for errors by having the Google Chrome Developer Tools console open while performing every user event possible on the site.
+- I manually tested the site for errors by having the Google Chrome Developer Tools console 
+open while performing every user event possible on the site.
 
-- To ensure that the site contains valid HTML, the HTML code was checked by direct input using the W3C Markup Validation Service: [https://validator.w3.org/](https://validator.w3.org/)
+- To ensure that the site contains valid HTML, the HTML code was checked by direct input using
+ the W3C Markup Validation Service: [https://validator.w3.org/](https://validator.w3.org/)
 
-- To check valid CSS, direct input via the W3C CSS Validation Service was used: [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
+- To check valid CSS, direct input via the W3C CSS Validation Service was used:
+[https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
 
-- To test the validity of the jQuery files Esprima was used. [https://esprima.org/demo/validate.html](https://esprima.org/demo/validate.html)
+- To test the validity of the jQuery files Esprima was used. 
+[https://esprima.org/demo/validate.html](https://esprima.org/demo/validate.html)
 
-- To ensure that Python, Flask, Jinja code remained error-free, the Debug console was set to &#39;True&#39; throughout the entirety of the development process.
+- To ensure that Python, Flask, Jinja code remained error-free, the Debug console was 
+set to &#39;True&#39; throughout the entirety of the development process.
 
-- To ensure the site&#39;s functionality across various devices, I used the web developer tools inspection feature of each of the following browsers:
+- To ensure the site&#39;s functionality across various devices, I used the web developer 
+tools inspection feature of each of the following browsers:
 
 - Google Chrome
 - Mozilla Firefox
 - Microsoft Opera
 - Microsift Edge
 
-- For each browser, I manually checked the preview of each of the site&#39;s pages and events, in both vertical and horizontal views, for devices ranging from the iPhone 5/SE at the smallest end to a width of 3840px / 4k at the highest.
+- For each browser, I manually checked the preview of each of the site&#39;s pages and events, 
+in both vertical and horizontal views, for devices ranging from the iPhone 5/SE at the smallest 
+end to a width of 3840px / 4k at the highest.
 
-In addition to checking the application&#39;s functionality using browser developer tools, the site has been manually checked and found to function as desired on the following devices:
+In addition to checking the application&#39;s functionality using browser developer tools, 
+the site has been manually checked and found to function as desired on the following devices:
 
 **Laptops:**
   - Lenovo Yoga 530 (checked by both myself and my wife, Anita)
@@ -291,7 +354,9 @@ In addition to checking the application&#39;s functionality using browser develo
 
 ## **Requirements: Content**
 
-To meet the needs required above, the website requires mixed multimedia content including: text, collapsible accordions, a search function, call-to-action buttons, photographs, an embedded instructional video, and site-wide navigation buttons,
+To meet the needs required above, the website requires mixed multimedia content including: 
+text, collapsible accordions, a search function, call-to-action buttons, photographs, 
+an embedded instructional video, and site-wide navigation buttons,
 
 ## **Deployment**
 
@@ -325,39 +390,76 @@ I deployed _English for Automotive Engineers_ to Heroku. To do so, I went throug
 
 To run the code for _English for Automotive Engineers_ locally, one may:
 
-13. Open the main page of the repository at: [GitHub - RossClarkScotland/Automotive\_Vocab\_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
+13. Open the main page of the repository at: 
+[GitHub - RossClarkScotland/Automotive\_Vocab\_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
 14. Click the green &quot;Code&quot; button.
 15. Click the clipboard icon to copy the project URL.
 16. Open a terminal in GitPod, or other Integrated Development Environment.
 17. Open the file you wish to clone to.
 18. Enter the following command into the terminal:
 
-$ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
+$ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer]
+(https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
 
-Further details are available via: [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+Further details are available via: 
+[https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository]
+(https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ## **Credits**
 
 ### **Content:**
 
-- Credit to my fellow Code Institute student, Helen Goatly, for showing me an example of two lines of code that were necessary for the password confirmation check to work (these lines are commented on to this effect in the app.py file).
+- Credit to my fellow Code Institute student, Helen Goatly, for showing me an example of two lines 
+of code that were necessary for the password confirmation check to work (these lines are commented
+ on to this effect in the app.py file).
 
 ### **Media:**
 
 - All site images come from Pixabay and Unsplash.
 - The video embedded in how\_to\_use.html is hosted on YouTube.
-- Sample definitions of terms have been taken from: _Atkins, T. and Escudier, M. 2013. A Dictionary of Mechanical Engineering (Oxford Quick Reference), Gorse, C., Johnston, D., and Pritchard, M. 2012. The Oxford Dictionary of Construction, Surveying, and Civil Engineering. Oxford: Oxford University Press, Blockley, D. 2005. The New Penguin Dictionary of Civil Engineering. London: Penguin,_ [www.britannica.com](http://www.britannica.com/), [www.collinsdictionary.com](http://www.collinsdictionary.com/), [https://marketbusinessnews.com](https://marketbusinessnews.com/)_,_ [https://en.oxforddictionaries.com/](https://en.oxforddictionaries.com/)_,_ [https://www.lexico.com](https://www.lexico.com/)_,_ [https://www.mwcog.org](https://www.mwcog.org/)_,_ [https://www.monash.edu/business/marketing/marketing-dictionary](https://www.monash.edu/business/marketing/marketing-dictionary)_,_ [https://www.researchgate.net](https://www.researchgate.net/)_,_ [https://www.health.ny.gov/environmental/indoors/air/pmq\_a.htm](https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm)_,_ [https://www.reddit.com/r/cars/comments/2xivw0/what\_is\_a\_4\_door\_coupe/](https://www.reddit.com/r/cars/comments/2xivw0/what_is_a_4_door_coupe/)_,_ [https://afdc.energy.gov/vehicles/fuel\_cell.html](https://afdc.energy.gov/vehicles/fuel_cell.html)_,_ [https://autoexpertus.com/car-greenhouse/](https://autoexpertus.com/car-greenhouse/)_,_ [https://www.oxfordlearnersdictionaries.com](https://www.oxfordlearnersdictionaries.com/)_,_ [http://lexicon.ft.com](http://lexicon.ft.com/)_,_ [https://www.edmunds.com/glossary](https://www.edmunds.com/glossary)_,_ [https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work](https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work)_,_ [https://en.oxforddictionaries.com/](https://en.oxforddictionaries.com/)_,_ [https://www.smmt.co.uk/](https://www.smmt.co.uk/)_,_ [https://www.virta.global/vehicle-to-grid-v2g](https://www.virta.global/vehicle-to-grid-v2g)_,_ [https://dictionary.cambridge.org](https://dictionary.cambridge.org/)
+- Sample definitions of terms have been taken from: _Atkins, T. and Escudier, M. 2013. 
+A Dictionary of Mechanical Engineering (Oxford Quick Reference), Gorse, C., Johnston, D., and Pritchard, M. 2012. 
+The Oxford Dictionary of Construction, Surveying, and Civil Engineering. Oxford: Oxford University Press, Blockley, D. 2005. 
+The New Penguin Dictionary of Civil Engineering. London: Penguin,_ [www.britannica.com](http://www.britannica.com/), 
+[www.collinsdictionary.com](http://www.collinsdictionary.com/), 
+[https://marketbusinessnews.com](https://marketbusinessnews.com/)_,_ 
+[https://en.oxforddictionaries.com/](https://en.oxforddictionaries.com/)_,_ 
+[https://www.lexico.com](https://www.lexico.com/)_,_ [https://www.mwcog.org](https://www.mwcog.org/)_,_ 
+[https://www.monash.edu/business/marketing/marketing-dictionary](https://www.monash.edu/business/marketing/marketing-dictionary)_,_ 
+[https://www.researchgate.net](https://www.researchgate.net/)_,_ 
+[https://www.health.ny.gov/environmental/indoors/air/pmq\_a.htm](https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm)_,_ 
+[https://www.reddit.com/r/cars/comments/2xivw0/what\_is\_a\_4\_door\_coupe/]
+(https://www.reddit.com/r/cars/comments/2xivw0/what_is_a_4_door_coupe/)_,_ 
+[https://afdc.energy.gov/vehicles/fuel\_cell.html](https://afdc.energy.gov/vehicles/fuel_cell.html)_,_ 
+[https://autoexpertus.com/car-greenhouse/](https://autoexpertus.com/car-greenhouse/)_,_ 
+[https://www.oxfordlearnersdictionaries.com](https://www.oxfordlearnersdictionaries.com/)_,_ 
+[http://lexicon.ft.com](http://lexicon.ft.com/)_,_ [https://www.edmunds.com/glossary](https://www.edmunds.com/glossary)_,_ 
+[https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work]
+(https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work)_,_ 
+[https://en.oxforddictionaries.com/](https://en.oxforddictionaries.com/)_,_ 
+[https://www.smmt.co.uk/](https://www.smmt.co.uk/)_,_ 
+[https://www.virta.global/vehicle-to-grid-v2g](https://www.virta.global/vehicle-to-grid-v2g)_,_ 
+[https://dictionary.cambridge.org](https://dictionary.cambridge.org/)
 
 ## **Acknowledgements:**
 
-- I would like to thank my wife, Anita, for always being willing to lend a spare pair of eyes and, at times, keeping up an elaborate pretence that I was exhausting every swear word I know in every languages while my code wasn&#39;t working.
+- I would like to thank my wife, Anita, for always being willing to lend a spare pair of eyes and, at times, 
+keeping up an elaborate pretence that I was exhausting every swear word I know in every languages while 
+my code wasn&#39;t working.
 
-- I also owe a debt to my father, George, for agreeing to test and give feedback on site functionality, particularly as regards the various iterations of the game.
+- I also owe a debt to my father, George, for agreeing to test and give feedback on site functionality, 
+particularly as regards the various iterations of the game.
 
-- I am indebted, too, to my colleagues at the TUM Language Centre and my friend Kirill for checking the functionality of the website on their devices.
+- I am indebted, too, to my colleagues at the TUM Language Centre and my friend Kirill for checking the 
+functionality of the website on their devices.
 
-- I would also like to thank my friend Milana for being awesome at all things design and never being unwilling to say when some aspect of design is less than awesome.
+- I would also like to thank my friend Milana for being awesome at all things design and never being 
+unwilling to say when some aspect of design is less than awesome.
 
-- A huge shout out must go to Ed B_Lead of Code Institute's #data-centric-dev Slack channel, for his absurdly fast response times to any queries posted on the channel and even more absurd helpfulness and encouragement at all times.
+- A huge shout out must go to Ed B_Lead of Code Institute's #data-centric-dev Slack channel, for his 
+absurdly fast response times to any queries posted on the channel and even more absurd helpfulness and
+ encouragement at all times.
 
-- Finally, I would like to express my gratitude to my course mentor, Spencer Barribal, for offering encouragement and useful ideas, and to the Code Institute tutors and Slack community for providing advice and for humouring me when I asked stupid questions.
+- Finally, I would like to express my gratitude to my course mentor, Spencer Barribal, for offering 
+encouragement and useful ideas, and to the Code Institute tutors and Slack community for providing 
+advice and for humouring me when I asked stupid questions.
