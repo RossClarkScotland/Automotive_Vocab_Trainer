@@ -339,11 +339,11 @@ the site has been manually checked and found to function as desired on the follo
   - Lenovo Yoga 530 (checked by both myself and my wife, Anita)
   - HP 255 G5 Notebook (checked by both myself and my wife, Anita)
   - Macbook Air (checked by my father, George)
-  - Lenovo Thinkpad x390 (checked by my colleague, Rose)&nbsp;
+  - Lenovo Thinkpad x390 (checked by my colleague, Rose) <br/>
 **Tablets:**
   - Kindle Fire 3 HD (checked by both myself and my wife, Anita)
   - iPad mini 3 (checked by my father, George)
-  - iPad (checked by my aunt, Vivien)&nbsp;
+  - iPad (checked by my aunt, Vivien) <br/>
 **Smartphones:**
   - Samsung Galaxy J4+ (checked by myself)
   - Samsung A50 (checked by my wife, Anita)
