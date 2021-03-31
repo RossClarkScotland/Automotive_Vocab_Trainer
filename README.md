@@ -392,16 +392,15 @@ I deployed _English for Automotive Engineers_ to Heroku. To do so, I went throug
 
 To run the code for _English for Automotive Engineers_ locally, one may:
 
-13. Open the main page of the repository at: 
+1. Open the main page of the repository at: 
 [GitHub - RossClarkScotland/Automotive\_Vocab\_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
-14. Click the green &quot;Code&quot; button.
-15. Click the clipboard icon to copy the project URL.
-16. Open a terminal in GitPod, or other Integrated Development Environment.
-17. Open the file you wish to clone to.
-18. Enter the following command into the terminal:
+2. Click the green &quot;Code&quot; button.
+3. Click the clipboard icon to copy the project URL.
+4. Open a terminal in GitPod, or other Integrated Development Environment.
+5. Open the file you wish to clone to.
+6. Enter the following command into the terminal:
 
-$ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer]
-(https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
+$ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
 
 Further details are available via: 
 [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository]
