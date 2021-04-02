@@ -25,8 +25,7 @@ To help them study for this part of the exam then, the _English for Automotive E
 A) gathers all the exam-relevant vocabulary, both from the textbook and the student presentations,
 in one place, an B) provides students with an effective means of learning this vocabulary using 
 active recall techniques. 
-[The Effect of Word Recall on English Vocabulary Learning | IEEE Conference Publication | IEEE Xplore]
-(https://ieeexplore.ieee.org/document/5476669)
+[The Effect of Word Recall on English Vocabulary Learning | IEEE Conference Publication | IEEE Xplore](https://ieeexplore.ieee.org/document/5476669)
 
 Users of _English for Automotive Engineers_ will be first and foremost participants of the 
 English course of the same name at the Technical University Munich. These participants are
@@ -34,8 +33,7 @@ primarily from Germany, China, and Spain (though past students have come from a 
 of countries) and are primarily bachelor&#39;s degree students studying automotive engineering,
 mechanical engineering, or another related subject. The English level of the students is advanced,
 at least C1 according to the Common European Framework of Reference for Languages 
-(see: [The CEFR Levels (coe.int)]
-(https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions) ).
+(see: [The CEFR Levels (coe.int)](https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions) ).
 
 Users of the web app the will be young, tech-savvy students used to working with the textbook
  for the English course at the Technical University Munich. As such: the vocabulary on the app
@@ -318,7 +316,8 @@ open while performing every user event possible on the site.
 [https://esprima.org/demo/validate.html](https://esprima.org/demo/validate.html)
 
 - To ensure that Python, Flask, Jinja code remained error-free, the Debug console was 
-set to &#39;True&#39; throughout the entirety of the development process.
+set to &#39;True&#39; throughout the entirety of the development process. Pylint was also
+used to identify potential problems.
 
 - To ensure the site&#39;s functionality across various devices, I used the web developer 
 tools inspection feature of each of the following browsers:
@@ -403,8 +402,7 @@ To run the code for _English for Automotive Engineers_ locally, one may:
 $ git clone [https://github.com/RossClarkScotland/Automotive_Vocab_Trainer](https://github.com/RossClarkScotland/Automotive_Vocab_Trainer)
 
 Further details are available via: 
-[https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository]
-(https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+[https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ## **Credits**
 
@@ -429,14 +427,12 @@ The New Penguin Dictionary of Civil Engineering. London: Penguin,_ [www.britanni
 [https://www.monash.edu/business/marketing/marketing-dictionary](https://www.monash.edu/business/marketing/marketing-dictionary)_,_ 
 [https://www.researchgate.net](https://www.researchgate.net/)_,_ 
 [https://www.health.ny.gov/environmental/indoors/air/pmq\_a.htm](https://www.health.ny.gov/environmental/indoors/air/pmq_a.htm)_,_ 
-[https://www.reddit.com/r/cars/comments/2xivw0/what\_is\_a\_4\_door\_coupe/]
-(https://www.reddit.com/r/cars/comments/2xivw0/what_is_a_4_door_coupe/)_,_ 
+[https://www.reddit.com/r/cars/comments/2xivw0/what\_is\_a\_4\_door\_coupe/](https://www.reddit.com/r/cars/comments/2xivw0/what_is_a_4_door_coupe/)_,_ 
 [https://afdc.energy.gov/vehicles/fuel\_cell.html](https://afdc.energy.gov/vehicles/fuel_cell.html)_,_ 
 [https://autoexpertus.com/car-greenhouse/](https://autoexpertus.com/car-greenhouse/)_,_ 
 [https://www.oxfordlearnersdictionaries.com](https://www.oxfordlearnersdictionaries.com/)_,_ 
 [http://lexicon.ft.com](http://lexicon.ft.com/)_,_ [https://www.edmunds.com/glossary](https://www.edmunds.com/glossary)_,_ 
-[https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work]
-(https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work)_,_ 
+[https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work](https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work)_,_ 
 [https://en.oxforddictionaries.com/](https://en.oxforddictionaries.com/)_,_ 
 [https://www.smmt.co.uk/](https://www.smmt.co.uk/)_,_ 
 [https://www.virta.global/vehicle-to-grid-v2g](https://www.virta.global/vehicle-to-grid-v2g)_,_ 

@@ -1,3 +1,4 @@
+""" Imports """
 import os
 import random
 from flask import (
@@ -107,9 +108,8 @@ def register():
         if existing_user:
             flash("Someone else already has this username.")
             return redirect(url_for("register"))
-        """ Credit to my fellow student Helen Goatly for helping me work out,
-        via Slack, that the two following lines of code were necessary
-        """
+        # Credit to my fellow student Helen Goatly for helping me work out,
+        # via Slack, that the two following lines of code were necessary
         password = request.form.get("password")
         password_check = request.form.get("passwordcheck")
 
