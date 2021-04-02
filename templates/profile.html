@@ -18,9 +18,9 @@
     </section>
     <section>
         <!--Displays all terms added by the user-->
+        <h4 class="center-align">Terms added by you:</h4>
         {% if terms|length > 0 %}
         <ul class="collapsible popout">
-            <h4 class="center-align">Terms added by you:</h4>
             {% for term in terms %}
                 {% if session["user"] == term.created_by %}
                     <li>
