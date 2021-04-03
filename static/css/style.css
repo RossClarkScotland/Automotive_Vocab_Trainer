@@ -417,8 +417,6 @@ nav .brand-logo {
     }
 }
 
-
-/***********navbar**************/
 @media only screen and (min-width: 1280px) {
     nav .brand-logo {
         font-size: 2rem;
@@ -438,6 +436,18 @@ nav .brand-logo {
         min-height: 4.75rem;
     }
 
+}
+
+@media only screen and (min-width: 1440px) {
+    nav .brand-logo {
+        font-size: 2.75rem;
+        margin: 1.9rem;
+    }
+
+    nav ul a {
+        font-size: 1.1rem;
+        margin: 2.2rem 0.1rem;
+    }
 }
 
 /**************Terms page**************/
@@ -500,18 +510,6 @@ nav .brand-logo {
     }
 }
 
-@media only screen and (min-width: 1440px) {
-/***********navbar**************/
-    nav .brand-logo {
-        font-size: 2.75rem;
-        margin: 1.9rem;
-    }
-
-    nav ul a {
-        font-size: 1.1rem;
-        margin: 2.2rem 0.1rem;
-    }
-}
 
 /***********topics cards margins***********/
 @media only screen and (min-width: 320px) {
@@ -595,6 +593,15 @@ nav .brand-logo {
 @media only screen and (min-width: 1336px) {
     .admin-topics-view .col.m4 {
         margin-bottom: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .admin-topics-view .col.m4 {
+        margin-bottom: 15rem;
+    }
+    .student-topics-view .col.m4 {
+        margin-bottom: 4rem;
     }
 }
 
