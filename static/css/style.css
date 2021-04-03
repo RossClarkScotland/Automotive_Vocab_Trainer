@@ -78,9 +78,20 @@ nav .brand-logo {
 }
 
 /*****************Profile*********************/
+.card .card-image img {
+    margin-top: 3rem;
+}
+
+.card .card-image .card-title {
+    padding: 0.8rem;
+}
+
+.welcome-msg {
+    margin-top: 2.5rem;
+}
 
 .delete-acct-btn {
-    margin: 2.5rem;
+    margin: 2rem;
 }
 
 .delete-msg {
@@ -186,14 +197,6 @@ nav .brand-logo {
     height: auto;
     margin: 1rem auto 0 auto;
 }
-
-@media only screen and (min-width: 300px) {
-    .delete-card {
-        width: 20rem;
-        height: auto;
-        margin: 1rem auto 0 auto;
-        }
-    }
 
 
 /*****************Media queries*********************/
@@ -328,6 +331,26 @@ nav .brand-logo {
     background-size: 100% 100%;
     }
 }
+
+/*****************profile.html*********************/
+@media only screen and (min-width: 300px) {
+    .profile-card {
+        width: 20rem;
+        height: auto;
+        margin: 1rem auto 0 auto;
+        }
+    }
+
+
+/*****************delete.html*********************/
+
+@media only screen and (min-width: 300px) {
+    .delete-card {
+        width: 20rem;
+        height: auto;
+        margin: 1rem auto 0 auto;
+        }
+    }
 
 /*************How to use page****************/
 

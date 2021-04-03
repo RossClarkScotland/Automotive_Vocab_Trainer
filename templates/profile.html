@@ -2,10 +2,22 @@
 {% block content %}
 
     <header>
+        <section class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card profile-card">
+                    <div class="card-image">
+                        <a class="modal-trigger" href="#modal"><img 
+                        src="{{ url_for('static', filename='images/profilecar.jpg') }}"
+                        alt="profile car image"></a>
+                        <span class="card-title">{{ username }}'s profile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!--Welcome message-->
-        <h4 class="center-align">Hi, {{ username }}! Any terms you add 
+        <h5 class="center-align welcome-msg">Hi, {{ username }}! Any terms you add 
             to the glossary will appear below for you to read, 
-            edit or delete.</h4>
+            edit or delete.</h5>
     </header>
     <section>
         <!--Button leading to delete page-->
