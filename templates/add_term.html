@@ -31,10 +31,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-list-alt prefix red-text text-darken-4" aria-hidden="true"></i>
                     <select id="topic_name" name="topic_name" class="icons validate" required>
-                        <option value="" disabled selected>Choose topic</option>
                         {% for topic in topics %}
                             <option value="{{ topic.topic_name }}" 
-                            data-icon="{{ topic.img_url }}" >{{ topic.topic_name }}</option>
+                            data-icon="{{ topic.img_url }}" selected>{{ topic.topic_name }}</option>
                         {% endfor %}
                     </select>
                     <label for="topic_name">Topic</label>
@@ -47,10 +46,10 @@
                 <div class="input-field col s12">
                     <i class="fas fa-list-alt prefix red-text text-darken-4" aria-hidden="true"></i>
                     <select id="topic_name" name="topic_name" class="icons validate" required>
-                        <option value="" disabled selected>Choose topic</option>
-                            <option value="Presentations" 
-                            data-icon="https://cdn.pixabay.com/photo/2014/12/08/21/25/business-561388_1280.jpg">
-                            Presentations</option>
+                        <option value="Presentations" 
+                        data-icon="https://cdn.pixabay.com/photo/2014/12/08/21/25/business-561388_1280.jpg"
+                        disabled selected>
+                        Presentations</option>
                     </select>
                     <label for="topic_name">Topic</label>
                 </div>
