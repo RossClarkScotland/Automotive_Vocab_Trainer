@@ -318,7 +318,6 @@ def delete_user():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     mongo.db.users.delete_one({"username": username})
-    flash("You have deleted your account!")
     session.clear()
     return render_template("register.html", username=username)
 
