@@ -324,12 +324,12 @@ tools inspection feature of each of the following browsers:
 
 - Google Chrome
 - Mozilla Firefox
-- Microsoft Opera
 - Microsift Edge
 
 - For each browser, I manually checked the preview of each of the site&#39;s pages and events, 
 in both vertical and horizontal views, for devices ranging from the iPhone 5/SE at the smallest 
-end to a width of 3840px / 4k at the highest.
+end to a width of 3840px / 4k at the highest. I also checked all the user events with the console
+of each browser's developer tools to ensure there were no errors.
 
 In addition to checking the application&#39;s functionality using browser developer tools, 
 the site has been manually checked and found to function as desired on the following devices:
