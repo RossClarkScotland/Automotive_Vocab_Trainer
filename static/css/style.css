@@ -341,6 +341,12 @@ nav .brand-logo {
         }
     }
 
+@media only screen and (min-width: 800px) {
+    .welcome-msg {
+        font-size: 2rem;
+        }
+    }
+
 
 /*****************delete.html*********************/
 

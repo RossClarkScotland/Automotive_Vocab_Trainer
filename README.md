@@ -1,6 +1,6 @@
 # **English for Automotive Engineers**
 
-_English for Automotive Engineers_ is the minimum viable project for a mobile-first 
+_English for Automotive Engineers_ is the minimum viable project for a 
 web application to help advanced English learners learn automotive industry-related vocabulary. 
 The app supplements the textbook for an advanced English course, also entitled 
 English for Automotive Engineers, at the Technical University Munich. 
@@ -12,7 +12,7 @@ The full site is deployed via Heroku at: [Automotive Vocabulary Trainer
 ## **UX**
 
 NOTE: A full user experience design document, detailing the five planes of design for
- _English for Automotive Engineers_ appears as a separate document. The UX section in 
+ _English for Automotive Engineers_, appears as a separate document. The UX section in 
  this document provides an overview.
 
 In each chapter of the _English for Automotive Engineers_ textbook, students encounter 
@@ -21,13 +21,13 @@ An additional source of vocabulary that may occur in the final exam comes via st
 presentations, for which students provide one another with a list of 10 automotive-related
 terms, and explanations for these terms, that will occur during the presentation. 
 The vocabulary portion of the exam is the one students most frequently have concerns about.
-To help them study for this part of the exam then, the _English for Automotive Engineers_ app
+To help them study for this part of the exam, the _English for Automotive Engineers_ app
 A) gathers all the exam-relevant vocabulary, both from the textbook and the student presentations,
 in one place, an B) provides students with an effective means of learning this vocabulary using 
 active recall techniques. 
 [The Effect of Word Recall on English Vocabulary Learning | IEEE Conference Publication | IEEE Xplore](https://ieeexplore.ieee.org/document/5476669)
 
-Users of _English for Automotive Engineers_ will be first and foremost participants of the 
+Users of _English for Automotive Engineers_ will be participants of the 
 English course of the same name at the Technical University Munich. These participants are
 primarily from Germany, China, and Spain (though past students have come from a broad range
 of countries) and are primarily bachelor&#39;s degree students studying automotive engineering,
@@ -72,8 +72,8 @@ vocabulary using flashcard-like active recall.&quot;
 _How the site meets this need:_
 
 - The site includes all the vocabulary from the textbook, allows students to easily 
-add their own from presentations, and displays all vocabulary items in Materialize 
-collapsible accordions which encourage active recall by only displaying the term at first,
+add their own vocabulary from their presentations, and displays all vocabulary items in Materialize 
+collapsible accordions, which encourage active recall by only displaying the term at first,
 allowing the user to try to recall the meaning before revealing said meaning with a click.
 The site also allows the user to display the definition first, clicking to reveal the term 
 after active recall, and to shuffle the order of the vocabulary items.
@@ -363,8 +363,8 @@ an embedded instructional video, and site-wide navigation buttons,
 
 I deployed _English for Automotive Engineers_ to Heroku. To do so, I went through the following steps:
 
-1. Set up a requirements.text file on GitPod by typing pip3 freeze –local \&gt; requirements.txt into the command line.
-2. Added the Procfile by typing echo web: python app.py \&gt; Procfile into the command line.
+1. Set up a requirements.text file on GitPod by typing pip3 freeze –local > requirements.txt into the command line.
+2. Added the Procfile by typing echo web: python app.py > Procfile into the command line.
 3. Logged into Heroku.com and, from the dashboard, clicked on _create app._
 4. Entered the unique app name of automotive-vocabulary-trainer.
 5. Selected the region of Europe.
@@ -441,8 +441,8 @@ The New Penguin Dictionary of Civil Engineering. London: Penguin,_ [www.britanni
 ## **Acknowledgements:**
 
 - I would like to thank my wife, Anita, for always being willing to lend a spare pair of eyes and, at times, 
-keeping up an elaborate pretence that I was exhausting every swear word I know in every languages while 
-my code wasn&#39;t working.
+keeping up an elaborate pretence that I was not in fact exhausting every swear word I know in several languages 
+when my code wasn&#39;t working.
 
 - I also owe a debt to my father, George, for agreeing to test and give feedback on site functionality, 
 particularly as regards the various iterations of the game.
@@ -451,11 +451,11 @@ particularly as regards the various iterations of the game.
 functionality of the website on their devices.
 
 - I would also like to thank my friend Milana for being awesome at all things design and never being 
-unwilling to say when some aspect of design is less than awesome.
+unwilling to say when some aspect of my design is less than awesome.
 
 - A huge shout out must go to Ed B_Lead of Code Institute's #data-centric-dev Slack channel, for his 
-absurdly fast response times to any queries posted on the channel and even more absurd helpfulness and
- encouragement at all times.
+absurdly fast response times to any queries posted on the channel and even more absurd levels of 
+helpfulness and encouragement at all times.
 
 - Finally, I would like to express my gratitude to my course mentor, Spencer Barribal, for offering 
 encouragement and useful ideas, and to the Code Institute tutors and Slack community for providing 
