@@ -355,26 +355,28 @@ the site has been manually checked and found to function as desired on the follo
 
 ## Bugs and fixes
 
-A Materialize select element was used for both the Initially add_term-html
+A Materialize select element was used for both the add_term-html
 and edit_term.html forms to attribute a topic to each word added to / edited
 on the database. The aim here was to restrict the user view to only allow 
 users to attribute terms to the ‘Presentations’ topic, whereas the site 
 administrator view allows admin to attribute terms to any topic.
 
 Initially, construction of the select element followed the Materialize 
-documentation, i.e. beginning the dropdown elements with 
-<option value="" disabled selected>Choose topic</option>. However, with
-these settings, a console error occurred in cases where the user forgot
-to select an option before clicking the confirm action button 
+documentation, i.e. beginning the dropdown elements with an option
+element containing an empty value attribute and giving this option both the
+selected and disabled attributes. However, with these settings, a console 
+error occurred in cases where the user forgot to select an option before 
+clicking the confirm action button: 
 (“An invalid form control with name=’topic_name’ is not focusable”). 
 
-This issue was resolved by removing 
-<option value="" disabled selected>Choose topic</option> and giving the 
-‘selected’ attribute to the only option in the select dropdown. For the 
+
+This issue was resolved by removing the option with the empty value and giving the 
+selected attribute to the only option in the select dropdown. For the 
 user view, this meant ‘Presentations’ as the value and for the Admin view
 a jinja for loop with ‘{{ topic.topic_name }}’ as the value. This resolved
 the problem, with no console errors occurring  during form submission, even
 in cases where the user does not enter a topic. 
+
 
 However, although the user view for both add_term-html and edit_term.html 
 works exactly as desired one glitch remains in the administrative view. 
