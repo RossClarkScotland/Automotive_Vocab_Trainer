@@ -162,6 +162,10 @@ nav .brand-logo {
 .term-btn-defs {
     margin: 1rem 1rem 1rem auto;
 }
+
+.btn, .btn-large, .btn-small, .btn-floating, .btn-large, .btn-small, .btn-flat {
+    font-size: 0.9rem;
+}
 /*****************Topics*********************/
 
 .topic_img {
