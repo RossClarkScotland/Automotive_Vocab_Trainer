@@ -36,10 +36,10 @@ at least C1 according to the Common European Framework of Reference for Language
 (see: [The CEFR Levels (coe.int)](https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions) ).
 
 Users of the web app the will be young, tech-savvy students used to working with the textbook
- for the English course at the Technical University Munich. As such: the vocabulary on the app
-  should be the same as that in the textbook; the app should provide a means of filtering the
-   vocabulary according to each chapter in the textbook; and, where possible, images used on
-    the site should match those used in the textbook.
+for the English course at the Technical University Munich. As such: the vocabulary on the app
+should be the same as that in the textbook; the app should provide a means of filtering the
+vocabulary according to each chapter in the textbook; and, where possible, images used on
+the site should match those used in the textbook.
 
 ### **What technology is appropriate?**
 
@@ -352,6 +352,37 @@ the site has been manually checked and found to function as desired on the follo
   - Motorola G7 plus (checked by my colleague, Keith)
   - iPhone XR (checked by my brother, Greg)
   - iPhone SE (checked by my friend, Kiril)
+
+## Bugs and fixes
+
+A Materialize select element was used for both the Initially add_term-html
+and edit_term.html forms to attribute a topic to each word added to / edited
+on the database. The aim here was to restrict the user view to only allow 
+users to attribute terms to the ‘Presentations’ topic, whereas the site 
+administrator view allows admin to attribute terms to any topic.
+
+Initially, construction of the select element followed the Materialize 
+documentation, i.e. beginning the dropdown elements with 
+<option value="" disabled selected>Choose topic</option>. However, with
+these settings, a console error occurred in cases where the user forgot
+to select an option before clicking the confirm action button 
+(“An invalid form control with name=’topic_name’ is not focusable”). 
+
+This issue was resolved by removing 
+<option value="" disabled selected>Choose topic</option> and giving the 
+‘selected’ attribute to the only option in the select dropdown. For the 
+user view, this meant ‘Presentations’ as the value and for the Admin view
+a jinja for loop with ‘{{ topic.topic_name }}’ as the value. This resolved
+the problem, with no console errors occurring  during form submission, even
+in cases where the user does not enter a topic. 
+
+However, although the user view for both add_term-html and edit_term.html 
+works exactly as desired one glitch remains in the administrative view. 
+Here, the default selected topic for add_term.html is ‘Presentations’, whereas
+the default topic when editing a term on edit_term.html is ‘Transport’. I have
+been unable to resolve this issue in the timeframe I have for the project, and
+it will be an area to improve in later versions of the web app.
+
 
 ## **Requirements: Content**
 

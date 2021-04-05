@@ -32,7 +32,7 @@
                     <i class="fas fa-list-alt prefix red-text text-darken-4" aria-hidden="true"></i>
                     <select id="topic_name" name="topic_name" class="icons validate" required>
                         {% for topic in topics %}
-                            <option value="{{ topic.topic_name }}" 
+                           <option value="{{ topic.topic_name }}" 
                             data-icon="{{ topic.img_url }}" selected>{{ topic.topic_name }}</option>
                         {% endfor %}
                     </select>
