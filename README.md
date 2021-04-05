@@ -115,7 +115,7 @@ method of memorizing the terms for the exam via the Materialize collapsible acco
 ## **Features: Existing features (For screenshots of features, see the separate UX PDF)**
 
 ### **A video site tour demonstrating the main features of the web app can be viewed at the link below**
-[https://www.screencast.com/t/ObNhfcwIZUSq](https://www.screencast.com/t/ObNhfcwIZUSq)
+[https://www.screencast.com/t/5xUFkSdSIP](https://www.screencast.com/t/5xUFkSdSIP)
 
 ### **All pages**
 
