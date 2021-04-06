@@ -252,6 +252,13 @@ button on get\_topic.html. topics\_definitions.html contains all the features of
 
 - This page contains a custom made, embedded YouTube video which gives users a video
 tutorial on how to use and make the most of the site.
+- Nine years of teaching this course have taught me that students want / need detailed 
+explanations for anything regarding their assignments. As such, the explanations in the
+video are comprehension and the video runs to seven minutes and 28 seconds. Students 
+will be set watching the video, with comprehension questions, as a flipped classroom
+homework task rather than being shown in class. Videos for tasks of this nature can 
+generally run up to 10 minutes in length for university students. See, for example: 
+(https://www.colorado.edu/assett/faculty-resources/resources/flipped-classrooms)](https://www.colorado.edu/assett/faculty-resources/resources/flipped-classrooms)
 
 ## **Features: Features left to implement**
 
